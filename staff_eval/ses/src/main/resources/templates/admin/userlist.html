@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Student Lists</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+	<div class="container">
+		<div th:switch="${userList}">
+			<h2 th:case="null">No users yet!</h2>
+			<div th:case="*">
+				<h2>Student Lists</h2>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="row">Name</th>
+							<th scope="row">Age</th>
+							<th scope="row">Address</th>
+							<th scope="row">Edit</th>
+							<th scope="row">Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="usr : ${userList}">
+							<td th:text="${usr.name}"></td>
+							<td th:text="${usr.age}"></td>
+							<td th:text="${usr.address}"></td>
+							<td><a class="btn btn-primary"
+								th:href="@{/updateUser/{id}(id=${usr.id})}">Edit</a></td>
+							<td><a class="btn btn-primary"
+								th:href="@{/deleteUser/{id}(id=${usr.id})}">Delete</a></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<br> <a class="btn btn-primary" th:href="@{/userForm}"
+					role="button">Add New Student</a> <br>
+
+				<nav aria-label="...">
+
+					<ul class="pagination justify-content-center">
+						<li class="page-item"><span th:if="${hasPrev}"
+							class="page-link"><a
+								th:href="@{/index?page={prev}(prev=${prev})}">Previous</a></span></li>
+								
+						<li class="page-item"><span th:if="${hasPrev}"><a
+								th:href="@{/index?page={pageNumber}(pageNumber=${pageNumber})}" th:text="${pageNumber}">1</a></span></li>
+						
+						<li class="page-item"><span th:if="${hasNext}"
+							class="page-link"><a
+								th:href="@{/index?page={next}(next=${next})}">Next</a></span></li>
+					</ul>
+				</nav>
+			</div>
+			<p>
+				<!-- <a href="/signup">Add a new user</a> -->
+			</p>
+		</div>
+	</div>
+</body>
+</html>
