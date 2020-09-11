@@ -157,5 +157,15 @@ public class UserManageController {
 		return model;
 
 	}
+	
+	// delete student
+		@RequestMapping("/template")
+		public ModelAndView showTemplate() {
+
+			ModelAndView model = new ModelAndView();			
+			model.setViewName("common/master_template");
+
+			return model;
+		}
 
 }
