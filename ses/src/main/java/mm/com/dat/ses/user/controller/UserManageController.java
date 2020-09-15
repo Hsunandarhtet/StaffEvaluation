@@ -158,14 +158,35 @@ public class UserManageController {
 
 	}
 	
-	// delete student
-		@RequestMapping("/template")
-		public ModelAndView showTemplate() {
+	
+	//Staff List 
+	@RequestMapping("/user")
+	public ModelAndView showUserLists() {
 
-			ModelAndView model = new ModelAndView();			
-			model.setViewName("common/master_template");
+		ModelAndView model = new ModelAndView();			
+		model.setViewName("admin/user_lists");
 
-			return model;
-		}
+		return model;
+	}
+	
+	//Staff Registration Form 
+	@RequestMapping("/staffRegister")
+	public ModelAndView showStaffRegister() {
+
+		ModelAndView model = new ModelAndView();			
+		model.setViewName("admin/user_register");
+
+		return model;
+	}
+	
+	//Staff Registration Form 
+	@RequestMapping("/staffEdit")
+	public ModelAndView showTemplate() {
+
+		ModelAndView model = new ModelAndView();			
+		model.setViewName("redirect:/staffRegister");
+
+		return model;
+	}
 
 }
