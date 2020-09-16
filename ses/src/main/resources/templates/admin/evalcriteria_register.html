@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Staff Evaluation System</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="images/custom-logo.jpg">
+
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/flag-icon.min.css">
+<link rel="stylesheet" href="../css/cs-skin-elastic.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/cs-skin-elastic.css">
+<link rel="stylesheet"
+	href="../css/lib/datatable/dataTables.bootstrap.min.css">
+
+<style>
+</style>
+</head>
+
+<body>
+
+	<!-- add left panel -->
+	<aside th:replace="common/master_template :: left-panel-fragment">
+	</aside>
+
+
+	<div id="right-panel" class="right-panel">
+
+		<!-- add header fragment -->
+		<header th:replace="common/master_template :: header-fragment">
+		</header>
+
+
+
+		<!-- Content -->
+		
+		<!-- /.content -->
+
+
+		<div class="clearfix"></div>
+
+		<!-- add footer fragment -->
+		<footer th:replace="common/master_template :: footer-fragment">
+		</footer>
+
+	</div>
+	<!-- right panel end -->
+
+	<!-- Scripts -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.matchHeight.min.js"></script>
+	<script src="../js/main.js"></script>
+
+	<!--  Chart js -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#bootstrap-data-table-export').DataTable();
+		});
+	</script>
+</body>
+</html>
