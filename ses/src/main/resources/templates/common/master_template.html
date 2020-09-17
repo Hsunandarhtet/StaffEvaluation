@@ -29,10 +29,10 @@
 								class="menu-icon fa fa-laptop"></i>Dashboard </a></li>
 						<li class="menu-title">Managements</li>
 						<!-- /.menu-title -->
-						<li><a href="#"> <i class="menu-icon fa fa-user"></i>Users
-						</a> <a href="#"> <i class="menu-icon fa fa-users"></i>Teams
-						</a> <a href="#"> <i class="menu-icon fa fa-sitemap"></i>Departments
-						</a> <a href="#"> <i class="menu-icon fa fa-file-powerpoint-o"></i>Projects
+						<li><a th:href="@{/user}"> <i class="menu-icon fa fa-user"></i>Users
+						</a> <a th:href="@{/team_lists}"> <i class="menu-icon fa fa-users"></i>Teams
+						</a> <a th:href="@{/dept_lists}"> <i class="menu-icon fa fa-sitemap"></i>Departments
+						</a> <a th:href="@{/project_lists}"> <i class="menu-icon fa fa-file-powerpoint-o"></i>Projects
 						</a> <a href="#"> <i class="menu-icon fa fa-list-ol"></i>Evaluation
 								Criteria
 						</a> <a href="#"> <i class="menu-icon fa fa-line-chart"></i>Improvement
@@ -82,7 +82,7 @@
 							</a>
 
 							<div class="user-menu dropdown-menu">
-								<a class="nav-link" href="#"><i class="fa fa- user"></i>My
+								<a class="nav-link" href="#"><i class="fa fa-user"></i>My
 									Profile</a> <a class="nav-link" href="#"><i
 									class="fa fa-power-off"></i>Logout</a>
 							</div>
@@ -99,12 +99,12 @@
 
 		<div class="clearfix"></div>
         <!-- Footer -->
-        <footer class="site-footer" th:fragment="footer-fragment" style="width:81%;position:absolute;bottom:0;">
+        <footer class="site-footer" th:fragment="footer-fragment" style="width:100%;position:relative;bottom:0;">
             <div class="footer-inner bg-light">
                 <div class="row">
                     
                     <div class="col-sm-6 text-right">
-                        Copyright &copy; DIR-ACE Technology Ltd.s
+                        Copyright &copy; DIR-ACE Technology Ltd.
                     </div>
                 </div>
             </div>
@@ -126,3 +126,4 @@
 	</script>
 </body>
 </html>
+

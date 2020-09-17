@@ -23,8 +23,10 @@
 </head>
 
 <body>
-	<div th:include="common/master_template :: body">
-	<!-- <div th:replace="common/master_template :: rightPanel"> -->
+	<aside th:replace="common/master_template :: left-panel-fragment"></aside>
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+    <header th:replace="common/master_template :: header-fragment"></header>
 	<!-- Content -->
         <div class="content">
             <!-- Animated -->
@@ -32,8 +34,8 @@
                 <!--  Form  -->
                 <div class="row">
                     <div class="col-lg-12">
-						<div class="card-body">
-							<a class="btn btn-primary" th:href="@{/deptRegister}">Add New Department</a>
+						<div class="wrapper">
+							<a th:href="@{/deptRegister}">Add New Department</a>
 						</div>
                         <div class="card">
                             <div class="card-header">
@@ -52,7 +54,7 @@
 									</div>
 									<div class="col-7"></div>
 									<div class="col-3">
-	                   					<input type="text" value="" class="form-control" placeholder="Search by name"/>
+	                   					<input type="text" value="" class="form-control" placeholder="Search"/>
 	                   				</div>
                             </div>		
                             </div>	
@@ -102,6 +104,14 @@
             <!-- .animated -->
         </div>
         <!-- /.content -->
+        <div class="clearfix"></div>
+		<footer th:replace="common/master_template :: footer-fragment"></footer>
      </div>  
+     <!-- Scripts -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.matchHeight.min.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

@@ -20,68 +20,10 @@
 </head>
 
 <body>
-    <!-- Left Panel -->
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="#"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
-                    </li>
-                    <li class="menu-title">Managements</li><!-- /.menu-title -->
-                    <li>
-                        <a href="#"> <i class="menu-icon fa fa-cogs"></i>Users</a>
-                        <a href="#"> <i class="menu-icon fa fa-cogs"></i>Teams</a>
-                        <a href="#"> <i class="menu-icon fa fa-cogs"></i>Departments</a>
-                        <a href="#"> <i class="menu-icon fa fa-cogs"></i>Projects</a>
-                        <a href="#"> <i class="menu-icon fa fa-cogs"></i>Evaluation Criteria</a>
-                        <a href="#"> <i class="menu-icon fa fa-cogs"></i>Improvement Types</a>
-                        <a href="#"> <i class="menu-icon fa fa-cogs"></i>Rating</a>
-                        <a href="#"> <i class="menu-icon fa fa-cogs"></i>Financial Budget Year</a>
-                    </li>
-                    
-                    <li class="menu-title">Evaluation</li><!-- /.menu-title -->
-                    <li>
-						<a href="#"> <i class="menu-icon fa fa-cogs"></i>Staff Evaluation</a>
-						<a href="#"> <i class="menu-icon fa fa-cogs"></i>Evaluation Report</a>
-						<a href="#"> <i class="menu-icon fa fa-cogs"></i>Teams Export</a>
-                    </li>
-
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </aside>
-    <!-- /#left-panel -->
+   <aside th:replace="common/master_template :: left-panel-fragment"></aside>
     <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
-        <!-- Header-->
-        <header id="header" class="header">
-            <div class="top-left">
-				<div class="navbar-header">
-				
-                    <a class="navbar-brand" href="#"><img src="images/custom-logo.jpg" height="40" alt="Logo"></a> 
-					
-                   <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a> 
-				</div> 
-				
-			</div>
-            <div class="top-right">
-                <div class="header-menu">
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/user.png" alt="User Avatar">
-                        </a>
-
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
-                            <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </header>
-        <!-- /#header -->
+    <header th:replace="common/master_template :: header-fragment"></header>
         <!-- Content -->
         <div class="content">
             <!-- Animated -->
@@ -122,18 +64,9 @@
         </div>
         <!-- /.content -->
         <div class="clearfix"></div>
-		<div class="card-body"></div>
-        <!-- Footer -->
-        <footer class="site-footer">
-            <div class="footer-inner bg-white">
-                <div class="row" >
-                    <div class="col-sm-6"></br>
-                        Copyright &copy; DIR-ACE Technology Ltd.
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- /.site-footer -->
+        <div class="card-body"></div>
+        <div class="card-body"></div>
+		<footer th:replace="common/master_template :: footer-fragment"></footer>
     </div>
     <!-- /#right-panel -->
     <!-- Scripts -->
