@@ -1,4 +1,4 @@
-package mm.com.dat.ses.user.entity;
+package mm.com.dat.ses.evaluation.category.entity;
 
 import java.sql.Timestamp;
 
@@ -14,23 +14,16 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "users")
-public class UserEntity {
+@Table(name="eval_category")
+public class EvalCategoryEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	@Column(name = "user_id",length = 8)
-	private String user_id;
-
-	@Column(name = "user_name", nullable = false)
-	private String userName;
+	private long eval_category_id;
 	
-	@Column(name = "password", nullable = false)
-	private String password;
-	
-	@Column(name = "user_role", nullable = false)
-	private String userRole;
+	@Column(name="eval_category_name",nullable=false)
+	private String evalCategoryName;
 	
 	@Column(name = "deg_flag", nullable = false)
 	private Short degFlag;
@@ -46,4 +39,5 @@ public class UserEntity {
 	
 	@Column(name = "updated_time")
 	private Timestamp updatedTime;
+	
 }

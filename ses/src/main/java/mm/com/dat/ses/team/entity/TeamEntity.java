@@ -1,4 +1,4 @@
-package mm.com.dat.ses.user.entity;
+package mm.com.dat.ses.team.entity;
 
 import java.sql.Timestamp;
 
@@ -7,31 +7,34 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import lombok.Data;
+import mm.com.dat.ses.department.entity.DepartmentEntity;
 
 @Data
 @Entity
-@Table(name = "users")
-public class UserEntity {
+@Table(name = "team")
+public class TeamEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	@Column(name = "user_id",length = 8)
-	private String user_id;
+	private long team_id;
+	
+	@ManyToOne
+	@JoinColumn(name="dept_id")
+	private DepartmentEntity deptEntity;
 
-	@Column(name = "user_name", nullable = false)
-	private String userName;
+	@Column(name = "team_short_name", nullable = false)
+	private String teamShortName;
 	
-	@Column(name = "password", nullable = false)
-	private String password;
-	
-	@Column(name = "user_role", nullable = false)
-	private String userRole;
-	
+	@Column(name = "team_full_name", nullable = false)
+	private String teamFullName;
+
 	@Column(name = "deg_flag", nullable = false)
 	private Short degFlag;
 

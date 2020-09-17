@@ -1,4 +1,4 @@
-package mm.com.dat.ses.user.entity;
+package mm.com.dat.ses.budgetYear.entity;
 
 import java.sql.Timestamp;
 
@@ -14,23 +14,22 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "users")
-public class UserEntity {
-	
+@Table(name="budget_year")
+public class BudgetYearEntity {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	@Column(name = "user_id",length = 8)
-	private String user_id;
-
-	@Column(name = "user_name", nullable = false)
-	private String userName;
+	private long budget_year_id;
 	
-	@Column(name = "password", nullable = false)
-	private String password;
+	@Column(name="budget_year",nullable=false,length=9,unique=true)
+	private String budgetYear;
 	
-	@Column(name = "user_role", nullable = false)
-	private String userRole;
+	@Column(name="from_month",nullable=false,length=5)
+	private String fromMonth;
+	
+	@Column(name="to_month",nullable=false,length=5)
+	private String toMonth;
 	
 	@Column(name = "deg_flag", nullable = false)
 	private Short degFlag;
@@ -46,4 +45,5 @@ public class UserEntity {
 	
 	@Column(name = "updated_time")
 	private Timestamp updatedTime;
+	
 }

@@ -1,4 +1,4 @@
-package mm.com.dat.ses.user.entity;
+package mm.com.dat.ses.improvementType.entity;
 
 import java.sql.Timestamp;
 
@@ -14,23 +14,16 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "users")
-public class UserEntity {
+@Table(name = "improvement_type")
+public class ImprovementTypeEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	@Column(name = "user_id",length = 8)
-	private String user_id;
-
-	@Column(name = "user_name", nullable = false)
-	private String userName;
+	private long improvement_type_id;
 	
-	@Column(name = "password", nullable = false)
-	private String password;
-	
-	@Column(name = "user_role", nullable = false)
-	private String userRole;
+	@Column(name="improvement_type",nullable=false)
+	private String improvementType;
 	
 	@Column(name = "deg_flag", nullable = false)
 	private Short degFlag;
