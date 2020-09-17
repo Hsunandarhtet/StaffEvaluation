@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "studenttable")
+@Table(name = "student")
 public class UserEntityTest {
 
 	@Id

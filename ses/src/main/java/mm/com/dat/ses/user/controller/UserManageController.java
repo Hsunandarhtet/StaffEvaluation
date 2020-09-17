@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import mm.com.dat.ses.user.entity.UserEntity;
+import mm.com.dat.ses.user.entity.UserEntityTest;
 import mm.com.dat.ses.user.reqbean.UserManageReqBean;
 import mm.com.dat.ses.user.reqdto.UserManageReqDto;
 import mm.com.dat.ses.user.resbean.UserManageResBean;
@@ -38,10 +39,10 @@ public class UserManageController {
 		ModelAndView model = new ModelAndView();
 
 		List<UserManageResBean> stuList = new ArrayList<UserManageResBean>();
-		List<UserEntity> usrEnt = new ArrayList<>();
+		List<UserEntityTest> usrEnt = new ArrayList<>();
 		userService.findAll().forEach(usrEnt::add);
 
-		for (UserEntity res : usrEnt) {
+		for (UserEntityTest res : usrEnt) {
 			UserManageResBean usrBean = new UserManageResBean();
 			usrBean.setId(res.getId());
 			usrBean.setName(res.getName());
@@ -106,7 +107,7 @@ public class UserManageController {
 		logger.info("Starting updateStudent() ...");
 		ModelAndView model = new ModelAndView();
 
-		UserEntity stu = userService.getUserById(id);
+		UserEntityTest stu = userService.getUserById(id);
 		model.addObject("usrForm", stu);
 		model.setViewName("admin/user_form");
 
@@ -130,14 +131,14 @@ public class UserManageController {
 	public ModelAndView getUserList(@RequestParam(value = "page", defaultValue = "1") int pageNumber) {
 		logger.info("Starting the getStudentList() For all searching with laze style...");
 		ModelAndView model = new ModelAndView();
-		List<UserEntity> entityList = userService.findAllUser(pageNumber, ROW_PER_PAGE);
+		List<UserEntityTest> entityList = userService.findAllUser(pageNumber, ROW_PER_PAGE);
 		List<UserManageResBean> usrList = new ArrayList<UserManageResBean>();
 
 		long count = userService.count();
 		boolean hasPrev = pageNumber > 1;
 		boolean hasNext = (pageNumber * ROW_PER_PAGE) < count;
 
-		for (UserEntity res : entityList) {
+		for (UserEntityTest res : entityList) {
 			UserManageResBean usrBean = new UserManageResBean();
 			usrBean.setId(res.getId());
 			usrBean.setName(res.getName());

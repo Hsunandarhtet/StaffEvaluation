@@ -15,7 +15,7 @@ import javax.persistence.Table;
 import org.springframework.data.web.ProjectedPayload;
 
 import lombok.Data;
-import mm.com.dat.ses.budgetYear.entity.BudgetYearEntity;
+import mm.com.dat.ses.financialbudgetyear.entity.BudgetYearEntity;
 import mm.com.dat.ses.project.entity.ProjectEntity;
 import mm.com.dat.ses.team.entity.TeamEntity;
 import mm.com.dat.ses.user.entity.UserEntity;
