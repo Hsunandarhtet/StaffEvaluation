@@ -1,4 +1,4 @@
-package mm.com.dat.ses.improvementType.controller;
+package mm.com.dat.ses.improvementtype.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

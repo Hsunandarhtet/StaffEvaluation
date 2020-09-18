@@ -1,4 +1,4 @@
-package mm.com.dat.ses.improvementType.entity;
+package mm.com.dat.ses.improvementtype.entity;
 
 import java.sql.Timestamp;
 
