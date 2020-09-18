@@ -1,31 +1,29 @@
-package mm.com.dat.ses.user.entity;
+package mm.com.dat.ses.evaluation.category.entity;
 
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "users")
-public class UserEntity {
+@Table(name="eval_category")
+public class EvalCategoryEntity {
 	
 	@Id
-	@Column(length = 8)
-	private String user_id;
-
-	@Column(name = "user_name", nullable = false)
-	private String userName;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@OrderBy
+	private long eval_category_id;
 	
-	@Column(name = "password", nullable = false)
-	private String password;
-	
-	@Column(name = "user_role", nullable = false)
-	private String userRole;
+	@Column(name="eval_category_name",nullable=false)
+	private String evalCategoryName;
 	
 	@Column(name = "deg_flag", nullable = false)
 	private Short degFlag;
@@ -41,4 +39,5 @@ public class UserEntity {
 	
 	@Column(name = "updated_time")
 	private Timestamp updatedTime;
+	
 }

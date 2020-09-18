@@ -1,31 +1,32 @@
-package mm.com.dat.ses.user.entity;
+package mm.com.dat.ses.rating.entity;
 
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "users")
-public class UserEntity {
-	
-	@Id
-	@Column(length = 8)
-	private String user_id;
+@Table(name = "rating")
+public class RatingEntity {
 
-	@Column(name = "user_name", nullable = false)
-	private String userName;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@OrderBy
+	private long rating_id;
 	
-	@Column(name = "password", nullable = false)
-	private String password;
+	@Column(name="rating_rate",nullable=false)
+	private String ratingRate;
 	
-	@Column(name = "user_role", nullable = false)
-	private String userRole;
+	@Column(name="rating_detail")
+	private String ratingDetail;
 	
 	@Column(name = "deg_flag", nullable = false)
 	private Short degFlag;
@@ -41,4 +42,5 @@ public class UserEntity {
 	
 	@Column(name = "updated_time")
 	private Timestamp updatedTime;
+	
 }

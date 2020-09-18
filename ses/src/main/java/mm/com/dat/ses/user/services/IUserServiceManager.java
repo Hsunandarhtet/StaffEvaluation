@@ -2,16 +2,16 @@ package mm.com.dat.ses.user.services;
 
 import java.util.List;
 
-import mm.com.dat.ses.user.entity.UserEntity;
+import mm.com.dat.ses.user.entity.UserEntityTest;
 import mm.com.dat.ses.user.reqdto.UserManageReqDto;
 
 public interface IUserServiceManager {
 
-	List<UserEntity> findAll();
+	List<UserEntityTest> findAll();
 	
-	List<UserEntity> findAllUser(int pageNumber, int rowPerPagev);
+	List<UserEntityTest> findAllUser(int pageNumber, int rowPerPagev);
 	
-	UserEntity getUserById(long id);
+	UserEntityTest getUserById(long id);
 
     void saveUser(UserManageReqDto usr);
 
