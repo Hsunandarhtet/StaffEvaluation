@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import mm.com.dat.ses.user.entity.UserEntity;
+import mm.com.dat.ses.user.entity.UserEntityTest;
 import mm.com.dat.ses.user.repository.UserManageRepository;
 import mm.com.dat.ses.user.reqdto.UserManageReqDto;
 
@@ -19,20 +19,20 @@ public class UserManageService implements IUserServiceManager {
 	private UserManageRepository repository;
 
 	@Override
-	public List<UserEntity> findAll() {
+	public List<UserEntityTest> findAll() {
 
-		return (List<UserEntity>) repository.findAll();
+		return (List<UserEntityTest>) repository.findAll();
 	}
 
 	@Override
-	public UserEntity getUserById(long id) {
+	public UserEntityTest getUserById(long id) {
 		return repository.findById(id).get();
 	}
 
 	@Override
 	public void saveUser(UserManageReqDto usr) {
 
-		UserEntity usrEnt = new UserEntity();
+		UserEntityTest usrEnt = new UserEntityTest();
 		usrEnt.setId(usr.getId());
 		usrEnt.setName(usr.getName());
 		usrEnt.setAge(usr.getAge());
@@ -56,9 +56,9 @@ public class UserManageService implements IUserServiceManager {
 	}
 
 	@Override
-	public List<UserEntity> findAllUser(int pageNumber, int rowPerPage) {
+	public List<UserEntityTest> findAllUser(int pageNumber, int rowPerPage) {
 
-		List<UserEntity> usrList = new ArrayList<>();
+		List<UserEntityTest> usrList = new ArrayList<>();
 
 		Pageable sortedByIdAsc = PageRequest.of(pageNumber - 1, rowPerPage,
 
