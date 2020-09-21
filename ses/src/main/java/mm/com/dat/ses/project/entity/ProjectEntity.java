@@ -24,7 +24,7 @@ public class ProjectEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	private int project_id;
+	private Long project_id;
 	
 	@ManyToOne
 	@JoinColumn(name="team_id",nullable=false)
