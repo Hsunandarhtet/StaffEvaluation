@@ -12,8 +12,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
-import org.springframework.data.web.ProjectedPayload;
-
 import lombok.Data;
 import mm.com.dat.ses.financialbudgetyear.entity.BudgetYearEntity;
 import mm.com.dat.ses.project.entity.ProjectEntity;

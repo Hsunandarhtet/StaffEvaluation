@@ -1,3 +1,11 @@
+/***************************************************************
+ * Author       :	Hsu Nandar Htet						
+ * Created Date :	18/9/2020
+ * Updated Date :	-
+ * Version      : 	1.0
+ * Dev History  :	-
+***************************************************************/
+
 package mm.com.dat.ses.user.entity;
 
 import java.sql.Timestamp;
