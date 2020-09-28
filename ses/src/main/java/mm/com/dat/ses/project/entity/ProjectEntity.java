@@ -1,8 +1,6 @@
 package mm.com.dat.ses.project.entity;
 
 import java.sql.Timestamp;
-
-import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +22,7 @@ public class ProjectEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	private int project_id;
+	private Long project_id;
 	
 	@ManyToOne
 	@JoinColumn(name="team_id",nullable=false)

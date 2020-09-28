@@ -6,7 +6,7 @@
  * Dev History  :	-
 ***************************************************************/
 
-package mm.com.dat.ses.financialbudgetyear.entity;
+package mm.com.dat.ses.improvementtype.entity;
 
 import java.sql.Timestamp;
 
@@ -22,22 +22,17 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="budget_year")
-public class BudgetYearEntity {
-
+@Table(name = "improvement_type")
+public class ImprovementTypeEntity {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	private long budget_year_id;
+	private long improvement_type_id;
 	
-	@Column(name="budget_year",nullable=false,length=9,unique=true)
-	private String budgetYear;
 	
-	@Column(name="from_month",nullable=false,length=5)
-	private String fromMonth;
-	
-	@Column(name="to_month",nullable=false,length=5)
-	private String toMonth;
+	@Column(name="improvement_type",nullable=false)
+	private String improvementType;
 	
 	@Column(name = "deg_flag", nullable = false)
 	private Short degFlag;
@@ -53,5 +48,4 @@ public class BudgetYearEntity {
 	
 	@Column(name = "updated_time")
 	private Timestamp updatedTime;
-	
 }
