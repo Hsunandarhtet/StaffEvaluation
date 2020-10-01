@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Staff Evaluation System</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="images/custom-logo.jpg">
+
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/flag-icon.min.css">
+<link rel="stylesheet" href="../css/cs-skin-elastic.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/cs-skin-elastic.css">
+<link rel="stylesheet" href="../css/lib/datatable/dataTables.bootstrap.min.css">
+<!-- <link rel="stylesheet" href="../css/pe-icon-7-stroke.min.css"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+
+<style>
+</style>
+</head>
+
+<body>
+
+	<!-- add left panel -->
+	<aside th:replace="common/master_template :: left-panel-fragment">
+	</aside>
+
+
+	<div id="right-panel" class="right-panel">
+
+		<!-- add header fragment -->
+		<header th:replace="common/master_template :: header-fragment">
+		</header>
+
+
+
+		<!-- Content -->
+        <div class="content">
+            <!-- Animated -->
+            <div class="animated fadeIn">
+            
+                <!-- Widgets  -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-1">
+                                        <i class="pe-7s-id"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text"><span class="count">300</span></div>
+                                            <div class="stat-heading">User</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-2">
+                                        <i class="pe-7s-users"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text"><span class="count">50</span></div>
+                                            <div class="stat-heading">Team</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-3">
+                                        <i class="pe-7s-display1"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text"><span class="count">125</span></div>
+                                            <div class="stat-heading">Project</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-4">
+                                        <i class="pe-7s-date"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text"><span>2019 - 2020</span></div>
+                                            <div class="stat-heading">Budget Year</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Widgets -->
+                
+                <div>
+                	<img src="images/review.jpg">
+                </div>
+                
+            </div>
+            <!-- .animated -->
+        </div>
+        <!-- /.content -->
+
+
+		<div class="clearfix"></div>
+
+		<!-- add footer fragment -->
+		<footer th:replace="common/master_template :: footer-fragment">
+		</footer>
+
+	</div>
+	<!-- right panel end -->
+
+	<!-- Scripts -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.matchHeight.min.js"></script>
+	<script src="../js/main.js"></script>
+
+	<!--  Chart js -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#bootstrap-data-table-export').DataTable();
+		});
+	</script>
+</body>
+</html>
