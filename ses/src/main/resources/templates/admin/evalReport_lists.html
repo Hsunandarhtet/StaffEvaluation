@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Staff Evaluation System</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="images/custom-logo.jpg">
+
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/flag-icon.min.css">
+<link rel="stylesheet" href="../css/cs-skin-elastic.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/cs-skin-elastic.css">
+<link rel="stylesheet"
+	href="../css/lib/datatable/dataTables.bootstrap.min.css">
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<style>
+.table td {
+	padding: 0.45rem !important;
+}
+
+.wrapper {
+	margin-left: 0 !important;
+}
+</style>
+
+</head>
+
+<body>
+
+	<!-- add left panel -->
+	<aside th:replace="common/master_template :: left-panel-fragment">
+	</aside>
+
+
+	<div id="right-panel" class="right-panel">
+
+		<!-- add header fragment -->
+		<header th:replace="common/master_template :: header-fragment">
+		</header>
+
+
+
+		<!-- Content -->
+		<div class="content">
+			<!-- Animated -->
+			<div class="animated fadeIn">
+				<!--  Form  -->
+				<div class="row">
+					<div class="col-lg-12">
+
+						<div class="card">
+							<div class="card-header">
+								<strong>Employee Evaluation Report </strong>
+							</div>
+
+
+							<div class="card-body">
+								<table width="100%">
+									<tbody>
+										<tr>
+											<td><label>Search By Staff:</label></td>
+											<td>
+												<div class="form-group">
+													<select class="form-control">
+														<option>Aung Aung</option>
+														<option>Kyaw Kyaw</option>
+														<option>Thiha</option>
+														<option>Arkar Mon</option>
+													</select>
+												</div>
+											</td>
+
+											<td></td>
+											<td></td>
+											<td></td>
+
+											<td>
+												<div class="wrapper form-group"
+													style="transform: translate(50%, -10%);">
+													<a href="#" style="font-size: 15px; width: 125px;">Export</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td><label>Staff Name:</label></td>
+											<td>
+												<div class="form-group">
+													<input type="text" value="Aung Aung" class="form-control"
+														readonly>
+												</div>
+											</td>
+
+											<td><label>Department Name:</label></td>
+											<td>
+												<div class="form-group">
+													<input type="text" value="FPD" class="form-control"
+														readonly>
+												</div>
+											</td>
+											<td><label>Job Title: </label></td>
+											<td>
+												<div class="form-group">
+													<input type="text" value="Programmer" class="form-control"
+														readonly>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td><label>Manager Name:</label></td>
+											<td colspan="5"><input type="text" value="May May May"
+												class="form-control" readonly></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+
+							<div class="row">
+
+								<div class="wrapper form-group"
+									style="transform: translate(717%, -10%);">
+									<a href="#" style="font-size: 15px; width: 125px;">Edit</a>
+								</div>
+								<div class="wrapper form-group"
+									style="transform: translate(737%, -10%);">
+									<a href="#" style="font-size: 15px; width: 125px;">Delete</a>
+								</div>
+							</div>
+
+							<table id="bootstrap-data-table"
+								class="table table-striped table-bordered">
+
+								<thead>
+									<tr>
+										<th style="text-align: center; padding-bottom: 70px">No</th>
+										<th style="text-align: center; padding-bottom: 70px">Evaluation
+											Points</th>
+										<th>
+											<table style="width: 100%;">
+												<tbody>
+													<tr>
+														<td colspan="12" align="center">Score</td>
+													</tr>
+													<tr>
+														<td colspan="12" align="center">2020</td>
+													</tr>
+													<tr>
+														<td>Jan</td>
+														<td>Feb</td>
+														<td>Mar</td>
+														<td>Apr</td>
+														<td>May</td>
+														<td>Jun</td>
+														<td>Jul</td>
+														<td>Aug</td>
+														<td>Sep</td>
+														<td>Oct</td>
+														<td>Nov</td>
+														<td>Dec</td>
+													</tr>
+												</tbody>
+											</table>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><b>1</b></td>
+										<td colspan="2"><b>Job Knowledge</b></td>
+
+									</tr>
+									<tr>
+										<td align="right">1</td>
+										<td>Understanding about Expectations and job requirements</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">2</td>
+										<td>Willingness to do continued education and specialized
+											training</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">3</td>
+										<td>Having Skill and ability to perform the job
+											satisfactorily</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">4</td>
+										<td>Following the Rules and policies properly</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">5</td>
+										<td>Sharing Knowledge with colleagues</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right" colspan="2"><small><b>Sub
+													Total</b></small></td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+
+									</tr>
+
+									<tr>
+										<td><b>2</b></td>
+										<td colspan="2"><b>Productivity</b></td>
+									</tr>
+									<tr>
+										<td align="right">1</td>
+										<td>Using working time effectively</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">2</td>
+										<td>Keeping on the schedule and Deadlines are met</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">3</td>
+										<td>Present on time/Punctuality</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">4</td>
+										<td>Able to handling the multiple tasks.</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">5</td>
+										<td>Tasks are done with accuracy</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right" colspan="2" style="font-size: small;"><b>Sub
+												Total</b></td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+
+									<tr>
+										<td><b>3</b></td>
+										<td colspan="2"><b>Teamwork</b></td>
+									</tr>
+									<tr>
+										<td align="right">1</td>
+										<td>Giving respect among the colleagues</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">2</td>
+										<td>Accepts criticism when presented properly</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">3</td>
+										<td>Playing as a key person</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">4</td>
+										<td>Sharing team resources with each other</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">5</td>
+										<td>Executes his/her part of the task</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right" colspan="2" style="font-size: small;"><b>Sub
+												Total</b></td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+
+									<!-- <tr>
+										<td><b>4</b></td>
+										<td colspan="2"><b>Leadership</b></td>
+									</tr>
+									<tr>
+										<td align="right">1</td>
+										<td>Accepts his/her mistakes</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">2</td>
+										<td>Able to work without being supervised all the time</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">3</td>
+										<td>Capable of decision making</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">4</td>
+										<td>High pressure situations don't scare him/ her</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right">5</td>
+										<td>Tries to motivate his/her coworkers to finish tasks</td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr>
+									<tr>
+										<td align="right" colspan="2" style="font-size: small;"><b>Sub
+												Total</b></td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table></td>
+									</tr> -->
+
+									<tr>
+										<td align="right" colspan="2" style="font-size: small;"><b>Grand
+												Total</b></td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table>
+									</td>
+									</tr>
+									<tr>
+										<td align="right" colspan="2" style="font-size: small;"><b>Has
+												Improvement</b></td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr style="font-size: small;">
+														<td>Cons</td>
+														<td>Cons</td>
+														<td>Cons</td>
+														<td>Cons</td>
+														<td>Cons</td>
+														<td>Cons</td>
+														<td>Cons</td>
+														<td>Cons</td>
+														<td>Cons</td>
+														<td>Cons</td>
+														<td>Cons</td>
+														<td>Cons</td>
+													</tr>
+												</tbody>
+											</table>
+									</td>
+
+									</tr>
+									<tr>
+										<td align="right" colspan="2" style="font-size: small;"><b>Is
+												this employee eligible for promotion?</b></td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr style="font-size: small;">
+														<td>Yes</td>
+														<td>Yes</td>
+														<td>Yes</td>
+														<td>Yes</td>
+														<td>Yes</td>
+														<td>Yes</td>
+														<td>Yes</td>
+														<td>Yes</td>
+														<td>Yes</td>
+														<td>Yes</td>
+														<td>Yes</td>
+														<td>Yes</td>
+													</tr>
+												</tbody>
+											</table>
+									</td>
+
+									</tr>
+									<tr>
+										<td align="right" colspan="2" style="font-size: small;"><b>Is
+												this employee eligible for termination?</b></td>
+										<td><table style="width: 100%">
+												<tbody>
+													<tr style="font-size: small;">
+														<td>No</td>
+														<td>No</td>
+														<td>No</td>
+														<td>No</td>
+														<td>No</td>
+														<td>No</td>
+														<td>No</td>
+														<td>No</td>
+														<td>No</td>
+														<td>No</td>
+														<td>No</td>
+														<td>No</td>
+													</tr>
+												</tbody>
+											</table>
+									</td>
+									</tr>
+
+								</tbody>
+							</table>
+
+							<div class="card-body">
+								<div id="chartContainer" style="height: 500px; width: 100%;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--  /Form -->
+
+			</div>
+			<!-- .animated -->
+		</div>
+		<!-- /.content -->
+
+
+		<div class="clearfix"></div>
+
+		<!-- add footer fragment -->
+		<footer th:replace="common/master_template :: footer-fragment">
+		</footer>
+
+	</div>
+	<!-- right panel end -->
+
+	<!-- Scripts -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.matchHeight.min.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+	<!--  Chart js -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#bootstrap-data-table-export').DataTable();
+		});
+	</script>
+
+	<script>
+		window.onload = function () {
+			var chart = new CanvasJS.Chart("chartContainer", {
+			title:{
+				text: "Evaluation Chart By Month"
+			},
+			axisY:[{
+				
+				lineColor: "#C24642",
+				tickColor: "#C24642",
+				labelFontColor: "#C24642",
+				titleFontColor: "#C24642",
+				includeZero: true,
+				
+			}],
+			
+			toolTip: {
+				shared: true
+			},
+			legend: {
+				cursor: "pointer",
+				itemclick: toggleDataSeries
+			},
+			data: [{
+				type: "line",
+				name: "Job Knowledge",
+				color: "#369EAD",
+				showInLegend: true,
+				 axisYIndex: 1,
+				dataPoints: [
+					{ x: 10, y: 24.3,label: "Jan" }, 
+					{ x: 20, y: 33.9,label: "Feb" },
+					{ x: 30, y: 30.0,label: "Mar" },
+					{ x: 40, y: 15.8,label: "Apr" },
+					{ x: 50, y: 40.6,label: "May" },
+					{ x: 60, y: 19.6,label: "Jun" },
+					{ x: 70, y: 20.7,label: "Jul" },
+					{ x: 80, y: 19.7,label: "Aug" },
+					{ x: 90, y: 20.9,label: "Sep" },
+					{ x: 100, y: 34.8,label: "Oct" },
+					{ x: 110, y: 25.1,label: "Nov" },
+					{ x: 120, y: 25.4,label: "Dec" }
+				]
+			},
+			{
+				type: "line",
+				name: "Productivity",
+				color: "#C24642",
+				 axisYIndex: 1,
+				showInLegend: true,
+				dataPoints: [
+					{ x: 10, y: 32.3,label: "Jan" }, 
+					{ x: 20, y: 33.9,label: "Feb" },
+					{ x: 30, y: 26.0,label: "Mar" },
+					{ x: 40, y: 15.8,label: "Apr" },
+					{ x: 50, y: 18.6,label: "May" },
+					{ x: 60, y: 34.6,label: "Jun" },
+					{ x: 70, y: 37.7,label: "Jul" },
+					{ x: 80, y: 24.7,label: "Aug" },
+					{ x: 90, y: 35.9,label: "Sep" },
+					{ x: 100, y: 12.8,label: "Oct" },
+					{ x: 110, y: 38.1,label: "Nov" },
+					{ x: 120, y: 42.4,label: "Dec" }
+				]
+			},
+			{
+				type: "line",
+				name: "Teamwork",
+				color: "#7F6084",
+				 axisYIndex: 1,
+				showInLegend: true,
+				dataPoints: [
+					{ x: 10, y: 42.5,label: "Jan" }, 
+					{ x: 20, y: 42.3,label: "Feb" },
+					{ x: 30, y: 28.7,label: "Mar" },
+					{ x: 40, y: 22.5,label: "Apr" },
+					{ x: 50, y: 25.6,label: "May" },
+					{ x: 60, y: 20.7,label: "Jun" },
+					{ x: 70, y: 23.6,label: "Jul" },
+					{ x: 80, y: 32.0,label: "Aug" },
+					{ x: 90, y: 43.9,label: "Sep" },
+					{ x: 100, y: 26.4,label: "Oct" },
+					{ x: 110, y: 40.3,label: "Nov" },
+					{ x: 120, y: 15.2,label: "Dec" }
+				]
+			}]
+		});
+		chart.render();
+	
+		function toggleDataSeries(e) {
+			if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+				e.dataSeries.visible = false;
+			} else {
+				e.dataSeries.visible = true;
+			}
+			e.chart.render();
+		}
+	
+		}
+	</script>
+
+</body>
+</html>

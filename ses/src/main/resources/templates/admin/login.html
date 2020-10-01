@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Staff Evaluation System</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="images/custom-logo.jpg">
+
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/flag-icon.min.css">
+<link rel="stylesheet" href="../css/cs-skin-elastic.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/cs-skin-elastic.css">
+<link rel="stylesheet"
+	href="../css/lib/datatable/dataTables.bootstrap.min.css">
+
+<style>
+	.title{
+		font-size: 20px;
+		margin-bottom: 15px;
+		font-family: initial;
+	}
+	.btn{
+		background: #2E86C1!important;
+	}
+	.btn:hover{
+		background: #0056b3!important;
+	}
+</style>
+</head>
+
+<body class="bg-light" style="background-image: url('images/loginbg.jpg');">
+
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-form" style="border-radius: 25px;">
+                	<div align="center" class="title"><label style="color:#2E86C1"><b>Staff Evaluation System</b></label></div>
+                	
+                    <form action="/dashboard">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Login</button>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
