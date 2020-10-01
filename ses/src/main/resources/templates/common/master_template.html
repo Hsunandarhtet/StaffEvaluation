@@ -1,3 +1,10 @@
+<!-- ***************************************************************
+ * Author       : Aung Ko Lin & Min Arkar Mon					
+ * Created Date : 10/01/2020
+ * Updated Date : -
+ * Version      : 1.0
+ * Dev History  : Firstly Created
+***************************************************************-->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -25,13 +32,13 @@
 			<nav class="navbar navbar-expand-sm navbar-default">
 				<div id="main-menu" class="main-menu collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a th:href="@{/dashboard}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a></li>
+						<li class="active"><a th:href="@{/ses/dashboard}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a></li>
 						<li class="menu-title">Managements</li>
 						<!-- /.menu-title -->
-						<li><a th:href="@{/user}"> <i class="menu-icon fa fa-user"></i>Users
-						</a> <a th:href="@{/team_lists}"> <i class="menu-icon fa fa-users"></i>Teams
-						</a> <a th:href="@{/dept_lists}"> <i class="menu-icon fa fa-sitemap"></i>Departments
-						</a> <a th:href="@{/project_lists}"> <i class="menu-icon fa fa-file-powerpoint-o"></i>Projects
+						<li><a th:href="@{/ses/user}"> <i class="menu-icon fa fa-user"></i>Users
+						</a> <a th:href="@{/ses/team_lists}"> <i class="menu-icon fa fa-users"></i>Teams
+						</a> <a th:href="@{/ses/dept_lists}"> <i class="menu-icon fa fa-sitemap"></i>Departments
+						</a> <a th:href="@{/ses/project_lists}"> <i class="menu-icon fa fa-file-powerpoint-o"></i>Projects
 						</a> <a th:href="@{/finBudYear_lists}"> <i class="menu-icon fa fa-list-ol"></i>Evaluation
 								Criteria
 						</a> <a th:href="@{/impromentType_lists}"> <i class="menu-icon fa fa-line-chart"></i>Improvement
@@ -43,11 +50,11 @@
 
 						<li class="menu-title">Evaluation</li>
 						<!-- /.menu-title -->
-						<li><a th:href="@{/eval_point}"> <i class="menu-icon fa fa-bar-chart"></i>Staff
+						<li><a th:href="@{/ses/eval_point}"> <i class="menu-icon fa fa-bar-chart"></i>Staff
 								Evaluation
 						</a> <a th:href="@{/evalReport_lists}"> <i class="menu-icon fa fa-list-alt"></i>Evaluation
 								Report
-						</a> <a th:href="@{/team_evaluation}"> <i class="menu-icon fa fa-file-excel-o"></i>Teams
+						</a> <a th:href="@{/ses/team_evaluation}"> <i class="menu-icon fa fa-file-excel-o"></i>Teams
 								Export
 						</a></li>
 
@@ -66,7 +73,7 @@
 					<div class="navbar-header">
 
 						<a class="navbar-brand" href="#"><img
-							src="images/custom-logo.jpg" height="40" alt="Logo"></a> <a
+							src="../images/custom-logo.jpg" height="40" alt="Logo"></a> <a
 							id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
 					</div>
 
@@ -76,7 +83,7 @@
 						<div class="user-area dropdown float-right">
 							<a href="#" class="dropdown-toggle active" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false"> <img
-								class="user-avatar rounded-circle" src="images/user.png"
+								class="user-avatar rounded-circle" src="../images/user.png"
 								alt="User Avatar">
 							</a>
 

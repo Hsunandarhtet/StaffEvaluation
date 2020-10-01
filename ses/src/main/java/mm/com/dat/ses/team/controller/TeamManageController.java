@@ -1,9 +1,9 @@
 /***************************************************************
- * Author       :							
- * Created Date :
- * Updated Date :
- * Version      : 
- * Dev History  :
+ * Author       : Aung Ko Lin						
+ * Created Date : 10/01/2020
+ * Updated Date : -
+ * Version      : 1.0
+ * Dev History  : Firstly Created
 ***************************************************************/
 
 
@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class TeamManageController {
 	
 	//Team Lists
-	@RequestMapping("/team_lists")
+	@RequestMapping("/ses/team_lists")
 	public ModelAndView showTeamLists() {
 
 		ModelAndView model = new ModelAndView();			
@@ -27,7 +27,7 @@ public class TeamManageController {
 	}
 	
 	//Department Registration Form 
-	@RequestMapping("/teamRegister")
+	@RequestMapping("/ses/teamRegister")
 	public ModelAndView showTeamRegister() {
 
 		ModelAndView model = new ModelAndView();			
@@ -37,11 +37,11 @@ public class TeamManageController {
 	}
 	
 	//Department Registration Form 
-	@RequestMapping("/teamEdit")
+	@RequestMapping("/ses/teamEdit")
 	public ModelAndView showTeamUpdate() {
 
 		ModelAndView model = new ModelAndView();			
-		model.setViewName("redirect:/teamRegister");
+		model.setViewName("redirect:/ses/teamRegister");
 
 		return model;
 	}

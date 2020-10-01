@@ -1,3 +1,10 @@
+/***************************************************************
+ * Author       : Aung Ko Lin						
+ * Created Date : 10/01/2020
+ * Updated Date : -
+ * Version      : 1.0
+ * Dev History  : Firstly Created
+***************************************************************/
 package mm.com.dat.ses.user.controller;
 
 import java.util.ArrayList;
@@ -161,7 +168,7 @@ public class UserManageController {
 	
 	
 	//Staff List 
-	@RequestMapping("/user")
+	@RequestMapping("/ses/user")
 	public ModelAndView showUserLists() {
 
 		ModelAndView model = new ModelAndView();			
@@ -171,7 +178,7 @@ public class UserManageController {
 	}
 	
 	//Staff Registration Form 
-	@RequestMapping("/staffRegister")
+	@RequestMapping("/ses/staffRegister")
 	public ModelAndView showStaffRegister() {
 
 		ModelAndView model = new ModelAndView();			
@@ -181,11 +188,11 @@ public class UserManageController {
 	}
 	
 	//Staff Registration Form 
-	@RequestMapping("/staffEdit")
+	@RequestMapping("/ses/staffEdit")
 	public ModelAndView showTemplate() {
 
 		ModelAndView model = new ModelAndView();			
-		model.setViewName("redirect:/staffRegister");
+		model.setViewName("redirect:/ses/staffRegister");
 
 		return model;
 	}

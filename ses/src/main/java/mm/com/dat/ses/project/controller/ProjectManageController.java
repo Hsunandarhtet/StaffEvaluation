@@ -1,9 +1,9 @@
 /***************************************************************
- * Author       :							
- * Created Date :
- * Updated Date :
- * Version      : 
- * Dev History  :
+ * Author       : Aung Ko Lin						
+ * Created Date : 10/01/2020
+ * Updated Date : -
+ * Version      : 1.0
+ * Dev History  : Firstly Created
 ***************************************************************/
 
 
@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ProjectManageController {
 	
 	//project Lists
-	@RequestMapping("/project_lists")
+	@RequestMapping("/ses/project_lists")
 	public ModelAndView showProjectLists() {
 
 		ModelAndView model = new ModelAndView();			
@@ -27,7 +27,7 @@ public class ProjectManageController {
 	}
 	
 	//project Registration Form 
-	@RequestMapping("/projectRegister")
+	@RequestMapping("/ses/projectRegister")
 	public ModelAndView showProjectRegister() {
 
 		ModelAndView model = new ModelAndView();			
@@ -37,11 +37,11 @@ public class ProjectManageController {
 	}
 	
 	//project Registration Form 
-	@RequestMapping("/projectEdit")
+	@RequestMapping("/ses/projectEdit")
 	public ModelAndView showProjectUpdate() {
 
 		ModelAndView model = new ModelAndView();			
-		model.setViewName("redirect:/projectRegister");
+		model.setViewName("redirect:/ses/projectRegister");
 
 		return model;
 	}
