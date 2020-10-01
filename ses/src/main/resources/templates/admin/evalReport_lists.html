@@ -818,8 +818,12 @@
 							</table>
 
 							<div class="card-body">
-								<div id="chartContainer" style="height: 500px; width: 100%;"></div>
+								
+								<div style="width: 90%">
+									<canvas id="myChart" height="40px" width="90px"></canvas>
+								</div>
 							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -846,115 +850,52 @@
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/jquery.matchHeight.min.js"></script>
 	<script src="../js/main.js"></script>
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="../chart.js/Chart.min.js"></script>
 
 	<!--  Chart js -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#bootstrap-data-table-export').DataTable();
-		});
-	</script>
+	<script type="text/javascript" th:inline="javascript">
 
-	<script>
-		window.onload = function () {
-			var chart = new CanvasJS.Chart("chartContainer", {
-			title:{
-				text: "Evaluation Chart By Month"
-			},
-			axisY:[{
-				
-				lineColor: "#C24642",
-				tickColor: "#C24642",
-				labelFontColor: "#C24642",
-				titleFontColor: "#C24642",
-				includeZero: true,
-				
-			}],
-			
-			toolTip: {
-				shared: true
-			},
-			legend: {
-				cursor: "pointer",
-				itemclick: toggleDataSeries
-			},
-			data: [{
-				type: "line",
-				name: "Job Knowledge",
-				color: "#369EAD",
-				showInLegend: true,
-				 axisYIndex: 1,
-				dataPoints: [
-					{ x: 10, y: 24.3,label: "Jan" }, 
-					{ x: 20, y: 33.9,label: "Feb" },
-					{ x: 30, y: 30.0,label: "Mar" },
-					{ x: 40, y: 15.8,label: "Apr" },
-					{ x: 50, y: 40.6,label: "May" },
-					{ x: 60, y: 19.6,label: "Jun" },
-					{ x: 70, y: 20.7,label: "Jul" },
-					{ x: 80, y: 19.7,label: "Aug" },
-					{ x: 90, y: 20.9,label: "Sep" },
-					{ x: 100, y: 34.8,label: "Oct" },
-					{ x: 110, y: 25.1,label: "Nov" },
-					{ x: 120, y: 25.4,label: "Dec" }
-				]
-			},
-			{
-				type: "line",
-				name: "Productivity",
-				color: "#C24642",
-				 axisYIndex: 1,
-				showInLegend: true,
-				dataPoints: [
-					{ x: 10, y: 32.3,label: "Jan" }, 
-					{ x: 20, y: 33.9,label: "Feb" },
-					{ x: 30, y: 26.0,label: "Mar" },
-					{ x: 40, y: 15.8,label: "Apr" },
-					{ x: 50, y: 18.6,label: "May" },
-					{ x: 60, y: 34.6,label: "Jun" },
-					{ x: 70, y: 37.7,label: "Jul" },
-					{ x: 80, y: 24.7,label: "Aug" },
-					{ x: 90, y: 35.9,label: "Sep" },
-					{ x: 100, y: 12.8,label: "Oct" },
-					{ x: 110, y: 38.1,label: "Nov" },
-					{ x: 120, y: 42.4,label: "Dec" }
-				]
-			},
-			{
-				type: "line",
-				name: "Teamwork",
-				color: "#7F6084",
-				 axisYIndex: 1,
-				showInLegend: true,
-				dataPoints: [
-					{ x: 10, y: 42.5,label: "Jan" }, 
-					{ x: 20, y: 42.3,label: "Feb" },
-					{ x: 30, y: 28.7,label: "Mar" },
-					{ x: 40, y: 22.5,label: "Apr" },
-					{ x: 50, y: 25.6,label: "May" },
-					{ x: 60, y: 20.7,label: "Jun" },
-					{ x: 70, y: 23.6,label: "Jul" },
-					{ x: 80, y: 32.0,label: "Aug" },
-					{ x: 90, y: 43.9,label: "Sep" },
-					{ x: 100, y: 26.4,label: "Oct" },
-					{ x: 110, y: 40.3,label: "Nov" },
-					{ x: 120, y: 15.2,label: "Dec" }
-				]
-			}]
-		});
-		chart.render();
-	
-		function toggleDataSeries(e) {
-			if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-				e.dataSeries.visible = false;
-			} else {
-				e.dataSeries.visible = true;
-			}
-			e.chart.render();
-		}
-	
-		}
-	</script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            
+        	labels:  ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+
+            datasets: [
+                {
+                    label: "Job Knowledge",
+                    borderColor: 'rgb(255, 0, 0)',
+                    lineTension: 0,
+                    fill: false,
+                    
+                    data:  ['20','22','19','13','18','21','18','24','20','19','22','17'],
+                },
+                {
+                    label: "Productivity",
+                    borderColor: 'rgb(255, 100, 2)',
+                    lineTension: 0,
+                    fill: false,
+                    
+                    data:  ['21','20','15','18','20','22','16','23','17','20','24','19'],
+                },
+                {
+                    label: "Teamwork",
+                    borderColor: 'rgb(255, 100, 2)',
+                    lineTension: 0,
+                    fill: false,
+                    
+                    data:  ['19','23','20','23','17','19','24','17','21','18','20','21'],
+                },
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: { position: 'right' },
+        }
+    });
+
+    </script>
 
 </body>
 </html>
