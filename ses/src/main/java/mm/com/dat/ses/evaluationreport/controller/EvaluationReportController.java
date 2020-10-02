@@ -24,4 +24,14 @@ public class EvaluationReportController {
 
 			return model;
 		}
+		
+		// Team Evaluation Report Lists
+		@RequestMapping("/evalReportTeam_lists")
+		public ModelAndView showEvalReportTeam() {
+
+			ModelAndView model = new ModelAndView();
+			model.setViewName("admin/evalReportTeam_lists");
+
+			return model;
+		}
 }

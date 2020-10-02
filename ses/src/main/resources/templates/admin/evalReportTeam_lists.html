@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Staff Evaluation System</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="images/custom-logo.jpg">
+
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/flag-icon.min.css">
+<link rel="stylesheet" href="../css/cs-skin-elastic.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/cs-skin-elastic.css">
+<link rel="stylesheet"
+	href="../css/lib/datatable/dataTables.bootstrap.min.css">
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<style>
+
+.wrapper {
+	margin-left: 0 !important;
+}
+.modal-content{
+	width:180% !important;
+}
+</style>
+
+</head>
+
+<body>
+
+	<!-- add left panel -->
+	<aside th:replace="common/master_template :: left-panel-fragment">
+	</aside>
+
+
+	<div id="right-panel" class="right-panel">
+
+		<!-- add header fragment -->
+		<header th:replace="common/master_template :: header-fragment">
+		</header>
+
+
+
+		<!-- Content -->
+		<div class="content">
+			<!-- Animated -->
+			<div class="animated fadeIn">
+				<!--  Form  -->
+				<div class="row">
+					<div class="col-lg-12">
+
+						<div class="card">
+							<div class="card-header">
+								<strong>Employee Evaluation Report </strong>
+							</div>
+
+
+							<div class="card-body">
+								<table width="100%">
+									<tbody>
+										<tr>
+											<td><label>Search By:</label></td>
+											<td>
+												<div class="form-group">
+													
+													<select class="form-control" onchange="location = this.value;">
+														<option value="http://localhost:8080/evalReport_lists">Staff</option>
+														<option value="http://localhost:8080/evalReportTeam_lists" selected>Team</option>			
+													</select>
+												
+												</div>
+											</td>
+
+											<td><label style="margin-left:50px">Search Team:</label></td>
+											<td>
+												<div class="form-group">
+													<input type="text" value="" class="form-control">
+												</div>
+											</td>
+											<td></td>
+
+											<td>
+												<div class="wrapper form-group"
+													style="transform: translate(50%, -10%);">
+													<a href="#" style="font-size: 15px; width: 125px;">Export</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td><label>Team Name:</label></td>
+											<td>
+												<div class="form-group">
+													<input type="text" value="FPD" class="form-control"
+														readonly>
+												</div>
+											</td>
+
+											<td><label>Department Name:</label></td>
+											<td>
+												<div class="form-group">
+													<input type="text" value="Offshore Department 1" class="form-control"
+														readonly>
+												</div>
+											</td>
+											<td><label>Job Title: </label></td>
+											<td>
+												<div class="form-group">
+													<input type="text" value="" class="form-control"
+														readonly>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td><label>Manager Name:</label></td>
+											<td colspan="5"><input type="text" value="May May May"
+												class="form-control" readonly></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							
+							<div class="row">
+
+								<div class="wrapper form-group" style="transform: translate(400%, -10%);">
+									<a href="" style="font-size: 15px; width: 125px;" data-toggle="modal" data-target="#smallmodal">View Members</a>
+								</div>
+							</div>
+
+
+							
+							<div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true" >
+				                <div class="modal-dialog modal-sm" role="document">
+				                    <div class="modal-content">
+				                        <div class="modal-header">
+				                            <h5 class="modal-title" id="smallmodalLabel">FPD Members</h5>
+				                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				                                <span aria-hidden="true">&times;</span>
+				                            </button>
+				                        </div>
+				                        <div class="modal-body">
+				                            
+				                            <table id="bootstrap-data-table" class="table table-striped table-bordered">
+												<thead>
+													<tr>
+														<th>No.</th>
+														<th style="width:55%">Members</th>
+														<th>Evaluation Report</th>
+													
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>Aung Aung</td>
+														<td align="center">
+															<a class="btn btn-primary" href="/evalReport_lists" role="submit" style="width:125px">View</a>
+														</td>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td>May May</td>
+														<td align="center">
+															<a class="btn btn-primary" href="/evalReport_lists" role="submit" style="width:125px">View</a>
+														</td>
+													</tr>
+													<tr>
+														<td>3</td>
+														<td>Kyaw Kyaw</td>
+														<td align="center">
+															<a class="btn btn-primary" href="/evalReport_lists" role="submit" style="width:125px">View</a>
+														</td>
+													</tr>
+													<tr>
+														<td>4</td>
+														<td>Su Su</td>
+														<td align="center">
+															<a class="btn btn-primary" href="/evalReport_lists" role="submit" style="width:125px">View</a>
+														</td>
+													</tr>
+													<tr>
+														<td>5</td>
+														<td>Tun Tun</td>
+														<td align="center">
+															<a class="btn btn-primary" href="/evalReport_lists" role="submit" style="width:125px">View</a>
+														</td>
+													</tr>
+													<tr>
+														<td>6</td>
+														<td>Myo Kyaw</td>
+														<td align="center">
+															<a class="btn btn-primary" href="/evalReport_lists" role="submit" style="width:125px">View</a>
+														</td>
+													</tr>
+													
+													
+													
+												</tbody>
+											</table>
+				                            
+				                        </div>
+				                        
+				                    </div>
+				                </div>
+				            </div>
+							
+							
+							
+							
+
+							<div class="card">
+								<div class="card-header">
+									<strong>1.Job Knowledge</strong>
+								</div>
+	
+								<div class="card-body">
+									
+									<div style="width: 90%">
+										<canvas id="jobknowledge" height="35px" width="90px"></canvas>
+									</div>
+								</div>
+							</div>
+							
+							
+							<div class="card">
+								<div class="card-header">
+									<strong>2.Productivity</strong>
+								</div>
+	
+								<div class="card-body">
+									
+									<div style="width: 90%">
+										<canvas id="productivity" height="35px" width="90px"></canvas>
+									</div>
+								</div>
+							</div>
+							
+							<div class="card">
+								<div class="card-header">
+									<strong>3.Teamwork</strong>
+								</div>
+	
+								<div class="card-body">
+									
+									<div style="width: 90%">
+										<canvas id="teamwork" height="35px" width="90px"></canvas>
+									</div>
+								</div>
+							</div>
+						
+							
+						</div>
+					</div>
+				</div>
+				<!--  /Form -->
+
+			</div>
+			<!-- .animated -->
+		</div>
+		<!-- /.content -->
+
+
+		<div class="clearfix"></div>
+
+		<!-- add footer fragment -->
+		<footer th:replace="common/master_template :: footer-fragment">
+		</footer>
+
+	</div>
+	<!-- right panel end -->
+
+	<!-- Scripts -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.matchHeight.min.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="../chart.js/Chart.min.js"></script>
+
+	<!--  jobknowledge chart -->
+	<script type="text/javascript" th:inline="javascript">
+
+    var ctx = document.getElementById("jobknowledge").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            
+        	labels:  ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+
+            datasets: [
+                {
+                    label: "Empolyee1",
+                    borderColor: 'rgb(255, 0, 0)',
+                    lineTension: 0,
+                    fill: false,
+                    
+                    data:  ['20','22','19','13','18','21','18','24','20','19','22','17'],
+                },
+                {
+                    label: "Empolyee2",
+                    borderColor: 'rgb(255, 100, 2)',
+                    lineTension: 0,
+                    fill: false,
+                    
+                    data:  ['21','20','15','18','20','22','16','23','17','20','24','19'],
+                },
+                {
+                    label: "Empolyee3",
+                    borderColor: 'rgb(255, 100, 2)',
+                    lineTension: 0,
+                    fill: false,
+                    
+                    data:  ['19','23','20','23','17','19','24','17','21','18','20','21'],
+                },
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: { position: 'right' },
+        }
+    });
+
+    </script>
+    
+    <!--  productivity chart -->
+	<script type="text/javascript" th:inline="javascript">
+
+    var ctx = document.getElementById("productivity").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            
+        	labels:  ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+
+            datasets: [
+                {
+                    label: "Empolyee1",
+                    borderColor: 'rgb(255, 0, 0)',
+                    lineTension: 0,
+                    fill: false,
+                    
+                    data:  ['20','19','22','17','18','21','18','24','20','22','19','13'],
+                },
+                {
+                    label: "Empolyee2",
+                    borderColor: 'rgb(255, 100, 2)',
+                    lineTension: 0,
+                    fill: false,
+                    
+                    data:  ['17','20','24','19','20','22','16','23','21','20','15','18'],
+                },
+                {
+                    label: "Empolyee3",
+                    borderColor: 'rgb(255, 100, 2)',
+                    lineTension: 0,
+                    fill: false,
+                    
+                    data:  ['21','18','20','21','17','19','24','17','19','23','20','23'],
+                },
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: { position: 'right' },
+        }
+    });
+
+    </script>
+    
+    <!--  teamwork chart -->
+	<script type="text/javascript" th:inline="javascript">
+
+    var ctx = document.getElementById("teamwork").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            
+        	labels:  ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+
+            datasets: [
+                {
+                    label: "Empolyee1",
+                    borderColor: 'rgb(255, 0, 0)',
+                    lineTension: 0,
+                    fill: false,
+                    
+                    data:  ['20','18','24','20','19','22','22','19','13','18','21','17'],
+                },
+                {
+                    label: "Empolyee2",
+                    borderColor: 'rgb(255, 100, 2)',
+                    lineTension: 0,
+                    fill: false,
+                    
+                    data:  ['21','16','23','17','20','24','20','15','18','20','22','19'],
+                },
+                {
+                    label: "Empolyee3",
+                    borderColor: 'rgb(255, 100, 2)',
+                    lineTension: 0,
+                    fill: false,
+                    
+                    data:  ['19','24','17','21','18','20','23','20','23','17','19','21'],
+                },
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: { position: 'right' },
+        }
+    });
+
+    </script>
+
+</body>
+</html>
