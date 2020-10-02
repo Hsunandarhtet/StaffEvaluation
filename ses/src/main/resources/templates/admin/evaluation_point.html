@@ -1,3 +1,10 @@
+<!-- ***************************************************************
+ * Author       : Aung Ko Lin 				
+ * Created Date : 10/01/2020
+ * Updated Date : -
+ * Version      : 1.0
+ * Dev History  : Firstly Created
+***************************************************************-->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -18,8 +25,11 @@
  
 
    <style type="text/css">
-   
-    
+   	.table td,.table-bordered th  {
+			padding: 0.1rem !important;
+			font-size: 15px;
+			vertical-align: middle;
+	}
     </style>
 
 </head>
@@ -43,81 +53,104 @@
 							</div>
                             
                     		<div class="card-body">
-                    			<table>
-                    				<tr>
-                    					<td>
-                    						<label>Staff Name:</label>
-                    					</td>
-                    					<td>
-	                    		 			<div class="form-group">
-		                    		 			<select class="form-control">
-												    <option>Aung Ko Lin</option>
-												    <option>Hsu Nandar Htet</option>
-												    <option>Min Arkar Mon</option>
-												 </select>
-											 </div>
-                    					</td>
-                    					<td>
-                    						<label>Department Name:</label>
-                    					</td>
-                    					<td height="30px">
-                    						<div class="form-group">
-		                    		 			<select class="form-control width:50px">
-												    <option>DELTA Offshore Development</option>
-												    <option>HR/Admin Department</option>
-												    <option>Securities System Development(SSD)</option>
-												    <option>Operation Management Team (First Line)</option>
-												 </select>
-											 </div>
-                    					</td>
-                    					<td>
-                    						<label>Job Title: </label>
-                    					</td>
-                    					<td>
-	                    		 			<input class="form-control"/>
-                    					</td>
-                    				</tr>
-                    				<tr>
-                    					<td>
-                    						<label>Manager Name:</label>
-                    					</td>
-                    					<td colspan="5">
-                    						<input class="form-control"/>
-                    					</td>
-                    				</tr>
+                    			<table class="table table-striped table-bordered">
+                    				<tbody>
+	                    				<tr>
+	                    					<td>
+	                    						<label>Staff Name:</label>
+	                    					</td>
+	                    					<td>
+		                    		 			<div class="form-group">
+			                    		 			<select class="form-control">
+													    <option>Aung Ko Lin</option>
+													    <option>Hsu Nandar Htet</option>
+													    <option>Min Arkar Mon</option>
+													 </select>
+												 </div>
+	                    					</td>
+	                    					<td></td>
+	                    					<td>
+	                    						<label>Department Name:</label>
+	                    					</td>
+	                    					
+	                    					<td>
+	                    						<div class="form-group">
+			                    		 			<select class="form-control">
+													    <option>DELTA Offshore Development</option>
+													    <option>HR/Admin Department</option>
+													    <option>Securities System Development(SSD)</option>
+													    <option>Operation Management Team (First Line)</option>
+													 </select>
+												 </div>
+	                    					</td>
+	                    				</tr>
+	                    				<tr>
+	                    					<td>
+	                    						<label>Manager Name:</label>
+	                    					</td>
+	                    					<td>
+	                    						<input class="form-control"/>
+	                    					</td>
+	                    					<td></td>
+	                    					<td>
+	                    						<label>Job Title: </label>
+	                    					</td>
+	                    					<td>
+		                    		 			<input class="form-control"/>
+	                    					</td>
+	                    				</tr>
+	                    				
+	                    				<tr>
+	                    					<td>
+	                    						<label>Financial Year Start Month: </label>
+	                    					</td>
+	                    					<td>
+		                    		 			<input class="form-control" type="date"/>
+	                    					</td>
+	                    					<td></td>
+	                    					<td>
+	                    						<label>Financial Year End Month: </label>
+	                    					</td>
+	                    					<td>
+		                    		 			<input class="form-control" type="date"/>
+	                    					</td>
+	                    				</tr>
+                    				</tbody>
                     			</table>
-	                    		
-	                    	
                     		</div>
-                            <table border="1" style="border-color: blue">
+                    		
+                            <table id="bootstrap-data-table"
+								class="table table-striped table-bordered">
 								
                                     <thead>
                                         <tr>
-                                            <th bgcolor="#80ced6" style="text-align: center">No</th>
-                                            <th bgcolor="#80ced6" style="text-align: center">Evaluation Points</th>
+                                            <td style="text-align: center;" bgcolor="#e5ffff"><b>No</b></td>
+                                            <td style="text-align: center;" bgcolor="#e5ffff"><b>Evaluation Points</b></td>
                                             <th>
-	                                            <table border="1" style="width: 100%;border-color: blue">
-	                                       			<tr bgcolor="#80ced6">
-	                                       				<td colspan="12" align="center">Score</td>
-	                                       			</tr>
-	                                       			<tr>
-	                                       				<td colspan="12" align="center">2020</td>
-	                                       			</tr>
-	                                       			<tr>
-	                                       				<td>Jan</td>
-	                                       				<td>Feb</td>
-	                                       				<td>Mar</td>
-	                                       				<td>Apr</td>
-	                                       				<td>May</td>
-	                                       				<td>Jun</td>
-	                                       				<td>Jul</td>
-	                                       				<td>Aug</td>
-	                                       				<td>Sep</td>
-	                                       				<td>Oct</td>
-	                                       				<td>Nov</td>
-	                                       				<td>Dec</td>
-	                                       			</tr>
-	                                       		</table>
+	                                            <table style="width: 100%;">
+												<tbody>
+													<tr>
+														<td colspan="12" align="center" bgcolor="#e5ffff">Score</td>
+													</tr>
+													<tr>
+														<td colspan="12" align="center">2020</td>
+													</tr>
+													<tr>
+														<td>Jan</td>
+														<td>Feb</td>
+														<td>Mar</td>
+														<td>Apr</td>
+														<td>May</td>
+														<td>Jun</td>
+														<td>Jul</td>
+														<td>Aug</td>
+														<td>Sep</td>
+														<td>Oct</td>
+														<td>Nov</td>
+														<td>Dec</td>
+													</tr>
+												</tbody>
+											</table>
                                        		</th>
                                        	</tr>
                                     </thead>
@@ -130,9 +163,9 @@
                                         <tr>
                                             <td align="right">1</td>
                                             <td>Understanding about Expectations and job requirements</td>
-                                            <td><table border="1" style="width: 100%;border-color: blue">
+                                            <td><table border="1" style="width: 100%;">
 	                                       			<tr>
-	                                       				<td contenteditable="true">0</td>
+	                                       				<td contenteditable="true" tabindex="1">0</td>
 	                                       				<td contenteditable="true">0</td>
 	                                       				<td contenteditable="true">0</td>
 	                                       				<td contenteditable="true">0</td>
@@ -150,9 +183,9 @@
                                         <tr>
                                             <td align="right">2</td>
                                             <td>Willingness to do continued education and specialized training</td>
-                                            <td><table border="1" style="width: 100%;border-color: blue">
+                                            <td><table border="1" style="width: 100%;">
 	                                       			<tr>
-	                                       				<td contenteditable="true">0</td>
+	                                       				<td contenteditable="true" tabindex="2">0</td>
 	                                       				<td contenteditable="true">0</td>
 	                                       				<td contenteditable="true">0</td>
 	                                       				<td contenteditable="true">0</td>
@@ -170,9 +203,9 @@
                                          <tr>
                                             <td align="right">3</td>
                                             <td>Having Skill and ability to perform the job satisfactorily</td>
-                                            <td><table border="1" style="width: 100%;border-color: blue">
+                                            <td><table border="1" style="width: 100%;">
 	                                       			<tr>
-	                                       				<td contenteditable="true">0</td>
+	                                       				<td contenteditable="true" tabindex="3">0</td>
 	                                       				<td contenteditable="true">0</td>
 	                                       				<td contenteditable="true">0</td>
 	                                       				<td contenteditable="true">0</td>
@@ -190,9 +223,9 @@
                                         <tr>
                                             <td align="right">4</td>
                                             <td>Following the Rules and policies properly</td>
-                                            <td><table border="1" style="width: 100%;border-color: blue">
+                                            <td><table border="1" style="width: 100%;">
 	                                       			<tr>
-	                                       				<td contenteditable="true">0</td>
+	                                       				<td contenteditable="true" tabindex="4">0</td>
 	                                       				<td contenteditable="true">0</td>
 	                                       				<td contenteditable="true">0</td>
 	                                       				<td contenteditable="true">0</td>
@@ -210,9 +243,9 @@
                                         <tr>
                                             <td align="right">5</td>
                                             <td>Sharing Knowledge with colleagues</td>
-                                            <td><table border="1" style="width: 100%;border-color: blue">
+                                            <td><table border="1" style="width: 100%;">
 	                                       			<tr>
-	                                       				<td contenteditable="true">0</td>
+	                                       				<td contenteditable="true" tabindex="5">0</td>
 	                                       				<td contenteditable="true">0</td>
 	                                       				<td contenteditable="true">0</td>
 	                                       				<td contenteditable="true">0</td>
@@ -227,7 +260,7 @@
 	                                       			</tr>
 	                                       		</table></td>
                                         </tr>
-                                        <tr bgcolor="LightGray">
+                                        <tr>
                                             <td align="right" colspan="2"><small><b>Sub Total</b></small></td>
                                             <td><table border="1" style="width: 100%;border-color: blue">
 	                                       			<tr>
@@ -254,7 +287,7 @@
                                         <tr>
                                             <td align="right">1</td>
                                             <td>Using working time effectively</td>
-                                            <td><table border="1" style="width: 100%;border-color: blue">
+                                            <td><table border="1" style="width: 100%;">
 	                                       			<tr>
 	                                       				<td contenteditable="true">0</td>
 	                                       				<td contenteditable="true">0</td>
@@ -274,7 +307,7 @@
                                         <tr>
                                             <td align="right">2</td>
                                             <td>Keeping on the schedule and Deadlines are met</td>
-                                            <td><table border="1" style="width: 100%;border-color: blue">
+                                            <td><table border="1" style="width: 100%;">
 	                                       			<tr>
 	                                       				<td contenteditable="true">0</td>
 	                                       				<td contenteditable="true">0</td>
@@ -294,7 +327,7 @@
                                         <tr>
                                             <td align="right">3</td>
                                             <td>Present on time/Punctuality</td>
-                                            <td><table border="1" style="width: 100%;border-color: blue">
+                                            <td><table border="1" style="width: 100%;">
 	                                       			<tr>
 	                                       				<td contenteditable="true">0</td>
 	                                       				<td contenteditable="true">0</td>
@@ -314,7 +347,7 @@
                                         <tr>
                                             <td align="right">4</td>
                                             <td>Able to handling the multiple tasks.</td>
-                                            <td><table border="1" style="width: 100%;border-color: blue">
+                                            <td><table border="1" style="width: 100%;">
 	                                       			<tr>
 	                                       				<td contenteditable="true">0</td>
 	                                       				<td contenteditable="true">0</td>
@@ -334,7 +367,7 @@
                                          <tr>
                                             <td align="right">5</td>
                                             <td>Tasks are done with accuracy</td>
-                                            <td><table border="1" style="width: 100%;border-color: blue">
+                                            <td><table border="1" style="width: 100%;">
 	                                       			<tr>
 	                                       				<td contenteditable="true">0</td>
 	                                       				<td contenteditable="true">0</td>
@@ -351,9 +384,9 @@
 	                                       			</tr>
 	                                       		</table></td>
                                         </tr>
-                                        <tr bgcolor="LightGray">
+                                        <tr>
                                             <td align="right" colspan="2"><small><b>Sub Total</b></small></td>
-                                            <td><table border="1" style="width: 100%;border-color: blue">
+                                            <td><table border="1" style="width: 100%;">
 	                                       			<tr>
 	                                       				<td>0</td>
 	                                       				<td>0</td>
@@ -372,7 +405,7 @@
                                         </tr>
                                         <tr>
                                             <td align="right" colspan="2"><small><b>Grand Total</b></small></td>
-                                            <td><table border="1" style="width: 100%;border-color: blue">
+                                            <td><table border="1" style="width: 100%;">
 	                                       			<tr>
 	                                       				<td>0</td>
 	                                       				<td>0</td>
@@ -391,7 +424,7 @@
                                         </tr>
                                         <tr>
                                             <td align="right" colspan="2"><small><b>Has Improvement</b></small></td>
-                                            <td><table border="1" style="width: 100%;border-color: blue">
+                                            <td><table border="1" style="width: 100%;">
 	                                       			<tr>
 	                                       				<td><small>Cons</small></td>
 	                                       				<td><small>Cons</small></td>
@@ -410,7 +443,7 @@
                                         </tr>
                                         <tr>
                                             <td align="right" colspan="2"><small><b>Is this employee eligible for promotion?</b></small></td>
-                                            <td><table border="1" style="width: 100%;border-color: blue">
+                                            <td><table border="1" style="width: 100%;">
 	                                       			<tr>
 	                                       				<td><small>Yes</small></td>
 	                                       				<td><small>Yes</small></td>
@@ -429,7 +462,7 @@
                                         </tr>
                                         <tr>
                                             <td align="right" colspan="2"><small><b>Is this employee eligible for termination?</b></small></td>
-                                            <td><table border="1" style="width: 100%;border-color: blue">
+                                            <td><table border="1" style="width: 100%;">
 	                                       			<tr>
 	                                       				<td><small>Yes</small></td>
 	                                       				<td><small>Yes</small></td>
@@ -453,6 +486,7 @@
                             	<div style="width: 90%">
 									<canvas id="myChart" height="50px" width="90px"></canvas>
 								</div>
+								<button type="button" class="btn btn-primary">Save</button>	
                             </div>
                         </div>
                     </div>

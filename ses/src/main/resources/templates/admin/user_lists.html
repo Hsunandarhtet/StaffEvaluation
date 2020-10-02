@@ -1,3 +1,10 @@
+<!-- ***************************************************************
+ * Author       : Aung Ko Lin 				
+ * Created Date : 10/01/2020
+ * Updated Date : -
+ * Version      : 1.0
+ * Dev History  : Firstly Created
+***************************************************************-->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -42,8 +49,8 @@
                             <div class="card-body">
                             	<div class="row">
 									<div class="col-2">
-									<div class="wrapper" style="margin-left: 40px;margin-top: 20px">
-										<a th:href="@{/staffRegister}" style="font-size: 15px;">Add New Staff</a>
+									<div class="wrapper" style="margin-left: 90px;margin-top: 20px;position: absolute;">
+										<a th:href="@{/ses/staffRegister}" style="font-size: 15px;">Add New Staff</a>
 									</div>
 									</div>
 									<div class="col-7"></div>
@@ -56,6 +63,7 @@
 								
                                     <thead>
                                         <tr>
+                                        	<th>No</th>
                                             <th>Staff ID</th>
                                             <th>Staff Name</th>
                                             <th>Team</th>
@@ -65,22 +73,25 @@
                                     </thead>
                                     <tbody>
                                     	<tr>
+                                    		<td>1</td>
                                             <td>26-00119</td>
                                             <td>May Myat Thu</td>
                                             <td>FPD</td>
                                             <td>Administrator</td>
-                                            <td><a th:href="@{/staffEdit}"><i class="menu-icon fa fa-pencil"></i></a></td>
+                                            <td><a th:href="@{/ses/staffEdit}"><i class="menu-icon fa fa-pencil"></i></a></td>
                                             <td><i class="menu-icon fa fa-trash-o"></i></td>
                                         </tr>
                                         <tr>
+                                        	<td>2</td>
                                             <td>25-00119</td>
                                             <td>Aung Ko Lin</td>
                                             <td>FPD</td>
                                             <td>Administrator</td>
-                                            <td><a th:href="@{/staffEdit}"><i class="menu-icon fa fa-pencil"></i></a></td>
+                                            <td><a th:href="@{/ses/staffEdit}"><i class="menu-icon fa fa-pencil"></i></a></td>
                                             <td><i class="menu-icon fa fa-trash-o"></i></td>
                                         </tr>
                                         <tr>
+                                        	<td>3</td>
                                             <td>26-00119</td>
                                             <td>Min Arkar Mon</td>
                                             <td>FPD</td>
@@ -89,6 +100,7 @@
                                             <td><i class="menu-icon fa fa-trash-o"></i></td>
                                         </tr>
                                         <tr>
+                                        	<td>4</td>
                                             <td>26-00119</td>
                                             <td>Hsu Nandar Htet</td>
                                             <td>FPD</td>
@@ -97,6 +109,7 @@
                                             <td><i class="menu-icon fa fa-trash-o"></i></td>
                                         </tr>
                                         <tr>
+                                        	<td>5</td>
                                             <td>26-00119</td>
                                             <td>Aye Chan Thar Soe</td>
                                             <td>FPD</td>

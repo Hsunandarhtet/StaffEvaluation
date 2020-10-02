@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginContoller {
 
 	// Login to Application
-	@RequestMapping("/login")
+	@RequestMapping("/ses")
 	public ModelAndView login() {
 
 		ModelAndView model = new ModelAndView();

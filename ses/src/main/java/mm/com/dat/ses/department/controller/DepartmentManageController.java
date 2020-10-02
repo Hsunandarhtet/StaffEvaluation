@@ -1,9 +1,9 @@
 /***************************************************************
- * Author       :							
- * Created Date :
- * Updated Date :
- * Version      : 
- * Dev History  :
+ * Author       : Aung Ko Lin						
+ * Created Date : 10/01/2020
+ * Updated Date : -
+ * Version      : 1.0
+ * Dev History  : Firstly Created
 ***************************************************************/
 
 
@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class DepartmentManageController {
 	
 	//Department Lists
-	@RequestMapping("/dept_lists")
+	@RequestMapping("/ses/dept_lists")
 	public ModelAndView showUserLists() {
 
 		ModelAndView model = new ModelAndView();			
@@ -27,7 +27,7 @@ public class DepartmentManageController {
 	}
 	
 	//Department Registration Form 
-	@RequestMapping("/deptRegister")
+	@RequestMapping("/ses/deptRegister")
 	public ModelAndView showStaffRegister() {
 
 		ModelAndView model = new ModelAndView();			
@@ -37,11 +37,11 @@ public class DepartmentManageController {
 	}
 	
 	//Department Registration Form 
-	@RequestMapping("/deptEdit")
+	@RequestMapping("/ses/deptEdit")
 	public ModelAndView showDeptUpdate() {
 
 		ModelAndView model = new ModelAndView();			
-		model.setViewName("redirect:/deptRegister");
+		model.setViewName("redirect:/ses/deptRegister");
 
 		return model;
 	}

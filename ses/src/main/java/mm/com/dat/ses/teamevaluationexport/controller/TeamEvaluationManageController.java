@@ -1,9 +1,9 @@
 /***************************************************************
- * Author       :							
- * Created Date :
- * Updated Date :
- * Version      : 
- * Dev History  :
+ * Author       : Aung Ko Lin						
+ * Created Date : 10/01/2020
+ * Updated Date : -
+ * Version      : 1.0
+ * Dev History  : Firstly Created
 ***************************************************************/
 
 
@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class TeamEvaluationManageController {
 	
 	//Team Lists
-	@RequestMapping("/team_evaluation")
+	@RequestMapping("/ses/team_evaluation")
 	public ModelAndView showTeamLists() {
 
 		ModelAndView model = new ModelAndView();			

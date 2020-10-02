@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class DashBoardController {
 	
 		// Dashboard Screen
-		@RequestMapping("/dashboard")
+		@RequestMapping("/ses/dashboard")
 		public ModelAndView dashboard() {
 
 			ModelAndView model = new ModelAndView();
