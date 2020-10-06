@@ -20,12 +20,29 @@
 
 <style>
 
-.wrapper {
-	margin-left: 0 !important;
-}
-.modal-content{
-	width:180% !important;
-}
+	.table td,.table-bordered th  {
+			padding: 0.3rem !important;
+			font-size: 15px;
+			vertical-align: middle;
+	}
+	
+	label.disabled { 
+		color: #aaa;
+	}
+	
+	.form-text-box{
+		width:80%;
+	}
+	
+	.btn{
+		display: inline-block;
+		float: right;
+		font-size: 15px;
+		width: 125px;		
+	}
+ 	.modal-content{
+		width:180% !important;
+	}
 </style>
 
 </head>
@@ -57,15 +74,15 @@
 							<div class="card-header">
 								<strong>Employee Evaluation Report </strong>
 							</div>
-
-
+							
+							
 							<div class="card-body">
-								<table width="100%">
+								<table width="80%">
 									<tbody>
 										<tr>
 											<td><label>Search By:</label></td>
 											<td>
-												<div class="form-group">
+												<div class="form-group form-text-box">
 													
 													<select class="form-control" onchange="location = this.value;">
 														<option value="http://localhost:8080/evalReport_lists">Staff</option>
@@ -75,25 +92,57 @@
 												</div>
 											</td>
 
-											<td><label style="margin-left:50px">Search Team:</label></td>
+											<td><label class="disabled">Staff Id/Name:</label></td>
 											<td>
-												<div class="form-group">
-													<input type="text" value="" class="form-control">
-												</div>
-											</td>
-											<td></td>
-
-											<td>
-												<div class="wrapper form-group"
-													style="transform: translate(50%, -10%);">
-													<a href="#" style="font-size: 15px; width: 125px;">Export</a>
+												<div class="form-group form-text-box">
+													<input type="text" value="" class="form-control" disabled="disabled">
 												</div>
 											</td>
 										</tr>
 										<tr>
+											
+											<td><label>Budget Year:</label></td>
+											<td>
+												<div class="form-group form-text-box">	
+													<select class="form-control">
+														<option selected>2019-2020</option>
+														<option>2019-2019</option>
+														<option>2018-2019</option>			
+													</select>												
+												</div>
+											</td>
+											
 											<td><label>Team Name:</label></td>
 											<td>
-												<div class="form-group">
+												<div class="form-group form-text-box">	
+													<select class="form-control">
+														<option selected></option>
+														<option>FPD</option>
+														<option>Delta</option>
+														<option>Mark</option>			
+													</select>												
+												</div>
+											</td>
+										</tr>
+										
+									</tbody>
+								</table>
+								
+								<div>
+									<a href="#" class="btn btn-primary" style="margin-top: -3.2em;">Search</a>
+								</div>
+								
+							</div>
+							
+							
+							<!-- <div class="card-body"> -->
+								<table class="table table-bordered">
+									<tbody>
+										
+										<tr style="background-color:#f9f9f9">
+											<td><label>Team Name:</label></td>
+											<td>
+												<div class="form-text-box">
 													<input type="text" value="FPD" class="form-control"
 														readonly>
 												</div>
@@ -101,37 +150,38 @@
 
 											<td><label>Department Name:</label></td>
 											<td>
-												<div class="form-group">
+												<div class="form-text-box">
 													<input type="text" value="Offshore Department 1" class="form-control"
 														readonly>
 												</div>
 											</td>
-											<td><label>Job Title: </label></td>
+											
+										</tr>
+										<tr style="background-color:#f9f9f9">
+											<td><label>Manager Name:</label></td>
 											<td>
-												<div class="form-group">
-													<input type="text" value="" class="form-control"
-														readonly>
+												<div class="form-text-box">
+													<input type="text" value="May May May" class="form-control" readonly>
+												</div>
+											</td>
+										
+											<td><label>Job Title:</label></td>
+											<td>
+												<div class="form-text-box">
+													<input type="text" value="" class="form-control" readonly>
 												</div>
 											</td>
 										</tr>
-										<tr>
-											<td><label>Manager Name:</label></td>
-											<td colspan="5"><input type="text" value="May May May"
-												class="form-control" readonly></td>
-										</tr>
 									</tbody>
 								</table>
-							</div>
+							<!-- </div> -->
 							
-							<div class="row">
-
-								<div class="wrapper form-group" style="transform: translate(400%, -10%);">
-									<a href="" style="font-size: 15px; width: 125px;" data-toggle="modal" data-target="#smallmodal">View Members</a>
-								</div>
+							
+							<div style="margin:1em 0">
+								<a href="" class="btn btn-primary" style="margin-right:1.2em" data-toggle="modal" data-target="#smallmodal">View Members</a>								
 							</div>
 
 
-							
 							<div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true" >
 				                <div class="modal-dialog modal-sm" role="document">
 				                    <div class="modal-content">
@@ -156,42 +206,42 @@
 													<tr>
 														<td>1</td>
 														<td>Aung Aung</td>
-														<td align="center">
+														<td>
 															<a class="btn btn-primary" href="/evalReport_lists" role="submit" style="width:125px">View</a>
 														</td>
 													</tr>
 													<tr>
 														<td>2</td>
 														<td>May May</td>
-														<td align="center">
+														<td>
 															<a class="btn btn-primary" href="/evalReport_lists" role="submit" style="width:125px">View</a>
 														</td>
 													</tr>
 													<tr>
 														<td>3</td>
 														<td>Kyaw Kyaw</td>
-														<td align="center">
+														<td>
 															<a class="btn btn-primary" href="/evalReport_lists" role="submit" style="width:125px">View</a>
 														</td>
 													</tr>
 													<tr>
 														<td>4</td>
 														<td>Su Su</td>
-														<td align="center">
+														<td>
 															<a class="btn btn-primary" href="/evalReport_lists" role="submit" style="width:125px">View</a>
 														</td>
 													</tr>
 													<tr>
 														<td>5</td>
 														<td>Tun Tun</td>
-														<td align="center">
+														<td>
 															<a class="btn btn-primary" href="/evalReport_lists" role="submit" style="width:125px">View</a>
 														</td>
 													</tr>
 													<tr>
 														<td>6</td>
 														<td>Myo Kyaw</td>
-														<td align="center">
+														<td>
 															<a class="btn btn-primary" href="/evalReport_lists" role="submit" style="width:125px">View</a>
 														</td>
 													</tr>
