@@ -12,7 +12,10 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -23,8 +26,12 @@ import lombok.Data;
 public class UserEntity {
 	
 	@Id
-	@Column(length = 8)
-	private String user_id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@OrderBy
+	private long user_id;
+	
+	@Column(name = "user_no", length = 8, nullable = false)
+	private String userNo;
 
 	@Column(name = "user_name", nullable = false)
 	private String userName;
@@ -34,6 +41,12 @@ public class UserEntity {
 	
 	@Column(name = "user_role", nullable = false)
 	private String userRole;
+	
+	@Column(name = "position", nullable = false)
+	private String position;
+	
+	@Column(name = "probation")
+	private Short probation;
 	
 	@Column(name = "deg_flag", nullable = false)
 	private Short degFlag;
