@@ -196,5 +196,14 @@ public class UserManageController {
 
 		return model;
 	}
+	
+	//Staff History 
+	@RequestMapping("/ses/staffhistory")
+	public ModelAndView showStaffHistory() {
 
+		ModelAndView model = new ModelAndView();			
+		model.setViewName("admin/user_history");
+
+		return model;
+	}
 }
