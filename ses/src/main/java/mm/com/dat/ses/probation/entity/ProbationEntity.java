@@ -45,5 +45,6 @@ public class ProbationEntity {
 	
 	@Column(name = "probation_end_date", nullable = false)
 	private Date probationEndDat123;
+	private Date probationEndDate;
 		
 }
