@@ -31,7 +31,7 @@ public class DepartmentEntity {
 	private long dept_id;
 
 	@Column(name = "dept_name", nullable = false)
-	private String deptName;
+	private String deptName999;
 
 	@Column(name = "deg_flag", nullable = false)
 	private Short degFlag;
