@@ -9,6 +9,7 @@
 package mm.com.dat.ses.financialbudgetyear.entity;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,11 +34,11 @@ public class BudgetYearEntity {
 	@Column(name="budget_year",nullable=false,length=9,unique=true)
 	private String budgetYear;
 	
-	@Column(name="from_month",nullable=false,length=5)
-	private String fromMonth;
+	@Column(name="from_month",nullable=false)
+	private Date fromMonth;
 	
-	@Column(name="to_month",nullable=false,length=5)
-	private String toMonth;
+	@Column(name="to_month",nullable=false)
+	private Date toMonth;
 	
 	@Column(name = "deg_flag", nullable = false)
 	private Short degFlag;

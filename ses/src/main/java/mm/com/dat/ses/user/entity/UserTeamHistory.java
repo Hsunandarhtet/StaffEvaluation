@@ -41,6 +41,9 @@ public class UserTeamHistory {
 	@JoinColumn(name="team_id")
 	private TeamEntity teamId;
 	
+	@Column(name = "position")
+	private String position;
+	
 	@Column(name = "updated_by",length = 8)
 	private String updatedBy;
 	
