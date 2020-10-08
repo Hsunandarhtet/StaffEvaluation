@@ -18,6 +18,18 @@
 	href="../css/lib/datatable/dataTables.bootstrap.min.css">
 
 <style>
+	.form-control{
+		display:inline-block;
+		width:40%;
+		margin-left:18px;
+	}
+	.btn{
+		display: inline-block;
+		float: right;
+		font-size: 15px;
+		width: 125px;		
+	}
+	
 </style>
 </head>
 
@@ -47,14 +59,15 @@
 						
                         <div class="card">
                             <div class="card-header">
-								<strong>Improvement Type Management</strong>
+								<strong>User Role Permission</strong>
 							</div>
 							
                             
-                            <div class="row">
-								<div class="wrapper" style="margin: 2.2em 0 0 8.1em;">
-									<a href="/impromentType_register" style="font-size: 15px;">Add Improvement Type</a>
-								</div>	
+                             <div class="card-body">
+                            
+								<label>User Role:</label>
+								<input type="text" value="Admin" class="form-control" readonly/>
+								
                             </div>		
                             
                             <div class="card-body">
@@ -63,35 +76,50 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th style="width:80%">Improvement Type</th>                                                                                        
-                                            <th colspan="2">Action</th>
+                                            <th style="width:90%">Menu Lists</th>                                                                                                                                
+                                            <!-- <th colspan="2">Action</th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
                                     	<tr>
                                             <td>1</td>
-                                            <td>Regress</td>
-                                            <td><a href="/impromentType_update"><i class="menu-icon fa fa-pencil"></i></a></td>
-                                            <td><i class="menu-icon fa fa-trash-o"></i></td>
+                                            <td>Staff</td>
+                                            <!-- <td><a href="#"><i class="menu-icon fa fa-pencil"></i></a></td> -->
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td>Consistency</td>
-                                            <td><a href="/impromentType_update"><i class="menu-icon fa fa-pencil"></i></a></td>
-                                            <td><i class="menu-icon fa fa-trash-o"></i></td>
+                                            <td>Team</td>
+                                            <!-- <td><a href="#"><i class="menu-icon fa fa-pencil"></i></a></td> -->
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td>Improve</td>
-                                            <td><a href="/impromentType_update"><i class="menu-icon fa fa-pencil"></i></a></td>
-                                            <td><i class="menu-icon fa fa-trash-o"></i></td>
+                                            <td>Department</td>
+                                            <!-- <td><a href="#"><i class="menu-icon fa fa-pencil"></i></a></td> -->
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Project</td>
+                                            <!-- <td><a href="#"><i class="menu-icon fa fa-pencil"></i></a></td> -->
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Evaluation Criteria</td>
+                                            <!-- <td><a href="#"><i class="menu-icon fa fa-pencil"></i></a></td> -->
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Improvement Types</td>
+                                            <!-- <td><a href="#"><i class="menu-icon fa fa-pencil"></i></a></td> -->
                                         </tr>
                                         
                                         
                                     </tbody>
                                 </table>
                                 </div>
-                                
+                            
+                            	<div>
+									<a href="/ses/userRole_Lists" class="btn btn-primary" style="margin-right:1.2em;">Back</a>									
+								</div>
                             <div class="card-body"></div>
                         </div>
                     </div>
