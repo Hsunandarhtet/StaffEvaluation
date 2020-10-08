@@ -47,9 +47,6 @@ public class UserEntity {
 	@Column(name = "user_role", nullable = false)
 	private String userRole;
 	
-	@Column(name = "position", nullable = false)
-	private String position;
-	
 	@ManyToMany
 	@JoinTable(name="user_project",joinColumns = @JoinColumn(name="user_id"),inverseJoinColumns = @JoinColumn(name="project_id"))
 	private Set<ProjectEntity> projectId;
