@@ -38,7 +38,7 @@ public class ProbationEntity {
 	
 	@OneToOne
 	@JoinColumn(name="user_id")
-	private UserEntity userId;
+	private UserEntity userId1212;
 	
 	@Column(name = "probation_start_date",nullable = false)
 	private Date probationStartDate;
