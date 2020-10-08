@@ -14,7 +14,6 @@ import javax.persistence.Table;
 
 import lombok.Data;
 import mm.com.dat.ses.financialbudgetyear.entity.BudgetYearEntity;
-import mm.com.dat.ses.project.entity.ProjectEntity;
 import mm.com.dat.ses.team.entity.TeamEntity;
 import mm.com.dat.ses.user.entity.UserEntity;
 
@@ -39,10 +38,6 @@ public class EvalScoreHeadEntity {
 	@ManyToOne
 	@JoinColumn(name="budget_year_id",nullable=false)
 	private BudgetYearEntity budgetYearId;
-	
-	@ManyToOne
-	@JoinColumn(name="project_id",nullable=false)
-	private ProjectEntity projectId;
 	
 	@Column(name = "deg_flag", nullable = false)
 	private Short degFlag;

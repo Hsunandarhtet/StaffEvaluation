@@ -9,16 +9,21 @@
 package mm.com.dat.ses.user.entity;
 
 import java.sql.Timestamp;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import lombok.Data;
+import mm.com.dat.ses.project.entity.ProjectEntity;
 
 @Data
 @Entity
@@ -42,11 +47,9 @@ public class UserEntity {
 	@Column(name = "user_role", nullable = false)
 	private String userRole;
 	
-	@Column(name = "position", nullable = false)
-	private String position;
-	
-	@Column(name = "probation")
-	private Short probation;
+	@ManyToMany
+	@JoinTable(name="user_project",joinColumns = @JoinColumn(name="user_id"),inverseJoinColumns = @JoinColumn(name="project_id"))
+	private Set<ProjectEntity> projectId;
 	
 	@Column(name = "deg_flag", nullable = false)
 	private Short degFlag;

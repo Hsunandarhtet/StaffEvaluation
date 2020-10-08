@@ -41,7 +41,7 @@ public class TeamManageController {
 	public ModelAndView showTeamUpdate() {
 
 		ModelAndView model = new ModelAndView();			
-		model.setViewName("redirect:/ses/teamRegister");
+		model.setViewName("redirect:/ses/teamRegister1");
 
 		return model;
 	}
