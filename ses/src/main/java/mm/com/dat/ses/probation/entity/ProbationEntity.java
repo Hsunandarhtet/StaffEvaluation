@@ -44,6 +44,6 @@ public class ProbationEntity {
 	private Date probationStartDate;
 	
 	@Column(name = "probation_end_date", nullable = false)
-	private Date probationEndDateaabbcc;
+	private Date probationEndDate;
 		
 }
