@@ -29,7 +29,7 @@ public class UserTeamEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	private long user_team_id;
+	private Long user_team_id;
 
 	@ManyToOne
 	@JoinColumn(name = "user_id", nullable = false)

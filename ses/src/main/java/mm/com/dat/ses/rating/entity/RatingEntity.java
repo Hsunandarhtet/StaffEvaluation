@@ -28,7 +28,7 @@ public class RatingEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	private long rating_id;
+	private Long rating_id;
 	
 	@Column(name="rating_rate",nullable=false)
 	private String ratingRate;

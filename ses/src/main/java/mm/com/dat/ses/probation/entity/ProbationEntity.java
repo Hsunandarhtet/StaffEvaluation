@@ -31,7 +31,7 @@ public class ProbationEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	private long probation_id;
+	private Long probation_id;
 	
 	@Column(name = "probation_no", length = 8, nullable = false)
 	private String probationNo;

@@ -31,7 +31,7 @@ public class TeamEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	private long team_id;
+	private Long team_id;
 	
 	@ManyToOne
 	@JoinColumn(name="dept_id")

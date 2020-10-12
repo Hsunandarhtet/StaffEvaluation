@@ -28,7 +28,7 @@ public class ImprovementTypeEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	private long improvement_type_id;
+	private Long improvement_type_id;
 	
 	
 	@Column(name="improvement_type",nullable=false)
