@@ -43,17 +43,17 @@ public class TeamEntity {
 	@Column(name = "team_full_name", nullable = false)
 	private String teamFullName;
 
-	@Column(name = "deg_flag", nullable = false)
-	private Short degFlag;
+	@Column(name = "del_flag", nullable = false)
+	private Short delFlag;
 
-	@Column(name = "created_by", nullable = false,length = 8)
-	private String createdBy;
+	@Column(name = "created_by",nullable = false)
+	private Long createdBy;
 	
 	@Column(name = "created_time", nullable = false)
 	private Timestamp createdTime;
-
-	@Column(name = "updated_by",length = 8)
-	private String updatedBy;
+	
+	@Column(name = "updated_by")
+	private Long updatedBy;
 	
 	@Column(name = "updated_time")
 	private Timestamp updatedTime;
