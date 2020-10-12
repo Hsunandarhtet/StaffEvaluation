@@ -31,7 +31,7 @@ public class EvalScoreDetailEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	private long eval_detail_id;
+	private Long eval_detail_id;
 	
 	@ManyToOne
 	@JoinColumn(name="eval_score_head_id",nullable=false)

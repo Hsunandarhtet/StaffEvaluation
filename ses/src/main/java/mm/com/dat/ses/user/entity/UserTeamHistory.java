@@ -31,7 +31,7 @@ public class UserTeamHistory {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	private long history_id;
+	private Long history_id;
 	
 	@ManyToOne
 	@JoinColumn(name="user_id")

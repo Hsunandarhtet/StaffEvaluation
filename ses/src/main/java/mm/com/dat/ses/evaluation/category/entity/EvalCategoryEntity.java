@@ -28,7 +28,7 @@ public class EvalCategoryEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	private long eval_category_id;
+	private Long eval_category_id;
 	
 	@Column(name="eval_category_name",nullable=false)
 	private String evalCategoryName;

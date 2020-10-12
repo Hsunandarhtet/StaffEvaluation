@@ -29,7 +29,7 @@ public class BudgetYearEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	private long budget_year_id;
+	private Long budget_year_id;
 	
 	@Column(name="budget_year",nullable=false,length=9,unique=true)
 	private String budgetYear;

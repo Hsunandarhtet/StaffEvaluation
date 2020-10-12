@@ -33,7 +33,7 @@ public class UserEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	private long user_id;
+	private Long user_id;
 	
 	@Column(name = "user_no", length = 8, nullable = false)
 	private String userNo;
