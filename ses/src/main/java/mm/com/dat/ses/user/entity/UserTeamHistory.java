@@ -44,8 +44,8 @@ public class UserTeamHistory {
 	@Column(name = "position")
 	private String position;
 	
-	@Column(name = "updated_by",length = 8)
-	private String updatedBy;
+	@Column(name = "updated_by")
+	private Long updatedBy;
 	
 	@Column(name = "updated_time")
 	private Timestamp updatedTime;

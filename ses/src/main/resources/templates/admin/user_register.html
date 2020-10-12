@@ -59,7 +59,13 @@
 										</div>
 										<div class="form-group">
 											<label class="form-control-label">Probation : </label>
-											<input type="checkbox" value=""/>
+											<input type="checkbox" value="" onclick="isProbation()" />
+										</div>
+										<div class="form-group" id="divPro" style="display: none">
+										    <label class="form-control-label">Join Date :</label>
+										    <input type="date" value="" class="form-control"/>
+										    <label class="form-control-label">End Date :</label>
+										    <input type="date" value="" class="form-control"/>
 										</div>
 										<div class="form-group">
 		                                    <label>User Name</label>
@@ -151,5 +157,16 @@
     <script src="../js/main.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
 	<script src="../js/bootstrap-select.min.js"></script>
+	
+	<script>
+		function isProbation() {
+		  var x = document.getElementById('divPro');
+		  if (x.style.display === 'none') {
+		    x.style.display = 'block';
+		  } else {
+		    x.style.display = 'none';
+		  }
+		}
+</script>
 </body>
 </html>
