@@ -31,7 +31,7 @@ public class DepartmentEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@OrderBy
-	private long dept_id;
+	private Long dept_id;
 
 	@Column(name = "dept_name", nullable = false)
 	private String deptName;
