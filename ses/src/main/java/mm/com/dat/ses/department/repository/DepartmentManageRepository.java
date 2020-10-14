@@ -13,6 +13,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 import mm.com.dat.ses.department.entity.DepartmentEntity;
+import mm.com.dat.ses.department.reqdto.DepartmentManageReqDto;
 
 @Repository
 public interface DepartmentManageRepository extends PagingAndSortingRepository<DepartmentEntity,Long>, 
