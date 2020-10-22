@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.PersistenceException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -22,7 +24,6 @@ import org.springframework.stereotype.Service;
 
 import mm.com.dat.ses.department.entity.DepartmentEntity;
 import mm.com.dat.ses.department.repository.DepartmentManageRepository;
-import mm.com.dat.ses.department.reqbean.DepartmentManageReqBean;
 import mm.com.dat.ses.department.reqdto.DepartmentManageReqDto;
 
 @Service
@@ -52,7 +53,7 @@ public class DepartmentManageService implements IDepartmentServiceManager{
 	}
 
 	@Override
-	public DepartmentEntity getDeptById(long dept_id) throws ResourceNotFoundException{
+	public DepartmentEntity getDeptById(Long dept_id) throws ResourceNotFoundException{
 		
 		Optional<DepartmentEntity> dept=deptRepo.findById(dept_id);
 		
@@ -64,8 +65,9 @@ public class DepartmentManageService implements IDepartmentServiceManager{
 	}
 
 	@Override
-	public void saveDept(DepartmentManageReqDto dept) {
+	public Boolean saveDept(DepartmentManageReqDto dept) {
 		
+		Boolean status=true;
 		
 		if(dept.getDept_id() == null){
 			DepartmentEntity createDept=new DepartmentEntity();
@@ -76,7 +78,12 @@ public class DepartmentManageService implements IDepartmentServiceManager{
 			createDept.setCreatedTime(dept.getCreatedTime());
 			createDept.setUpdatedBy(dept.getUpdatedBy());
 			createDept.setUpdatedTime(dept.getUpdatedTime());
-			deptRepo.save(createDept);
+			try {
+				deptRepo.save(createDept);
+			}catch(Exception e) {
+				status=false;
+			}
+			
 		}
 		else {
 			Optional<DepartmentEntity> deptInfo=deptRepo.findById(dept.getDept_id());
@@ -93,18 +100,29 @@ public class DepartmentManageService implements IDepartmentServiceManager{
 				updateDept.setUpdatedBy(updatedBy);
 				updateDept.setUpdatedTime(updatedTime);
 				
-				deptRepo.save(updateDept);
+				try {
+					deptRepo.save(updateDept);
+				}catch(Exception e) {
+					status=false;
+				}
 			}
 			
 			
 		}
-		
+		return status;
 	}
 
 	@Override
-	public void deleteDept(Long dept_id) {
+	public Boolean deleteDept(Long dept_id) {
 		
-		deptRepo.deleteById(dept_id);
+		Boolean delstatus=true;
+		try{
+			deptRepo.delDept(dept_id);
+		}catch(PersistenceException e) {
+			System.out.println(e);
+			delstatus=false;
+		}
+		return delstatus;
 	}
 
 	@Override

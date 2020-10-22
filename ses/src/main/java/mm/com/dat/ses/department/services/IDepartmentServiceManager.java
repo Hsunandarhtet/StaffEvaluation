@@ -12,7 +12,6 @@ import java.util.List;
 
 import mm.com.dat.ses.department.entity.DepartmentEntity;
 import mm.com.dat.ses.department.reqdto.DepartmentManageReqDto;
-import mm.com.dat.ses.department.resbean.DepartmentManageResbean;
 
 public interface IDepartmentServiceManager {
 	
@@ -20,11 +19,11 @@ public interface IDepartmentServiceManager {
 	
 	List<DepartmentEntity> findAllDept(int pageNumber,int rowPerPage);
 	
-	DepartmentEntity getDeptById(long dept_id);
+	DepartmentEntity getDeptById(Long dept_id);
 	
-	void saveDept(DepartmentManageReqDto dept);
+	Boolean saveDept(DepartmentManageReqDto dept);
 	
-	void deleteDept(Long dept_id);
+	Boolean deleteDept(Long dept_id);
 	
 	long count();
 	

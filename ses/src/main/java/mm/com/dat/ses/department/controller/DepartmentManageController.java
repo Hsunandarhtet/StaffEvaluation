@@ -11,8 +11,10 @@ package mm.com.dat.ses.department.controller;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-import org.hibernate.type.descriptor.sql.SmallIntTypeDescriptor;
+import org.apache.logging.slf4j.SLF4JLogger;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -36,11 +38,15 @@ public class DepartmentManageController {
 	private IDepartmentServiceManager deptService;
 
 	private final int rowPerPage = 5;
+	
+	private static Logger logger=org.slf4j.LoggerFactory.getLogger(SLF4JLogger.class);
 
 	// Department Lists
 	@RequestMapping("/dept_lists")
 	public ModelAndView showDeptLists(@RequestParam(value = "page", defaultValue = "1") int pageNumber) {
-
+		
+		logger.info("Starting the getStudentList() For all searching...");
+		
 		ModelAndView model = new ModelAndView();
 
 		List<DepartmentManageResbean> deptreslist = new ArrayList<DepartmentManageResbean>();
@@ -77,26 +83,43 @@ public class DepartmentManageController {
 		return model;
 	}
 
-	// Department Registration Form
-	@RequestMapping("/deptRegister")
-	public ModelAndView showStaffRegister() {
-
-		ModelAndView model = new ModelAndView();
-		
-		DepartmentManageReqBean dept=new DepartmentManageReqBean();
-		
-		model.addObject("dept",dept);
-		model.setViewName("admin/dept_register");
-
-		return model;
-	}
 	
+	// Department Registration/Update Form
+		@RequestMapping({"/deptRegister","/deptEdit/{id}"})
+		public ModelAndView showStaffRegister(@PathVariable("id") Optional<Long> deptId) {
+			
+			ModelAndView model = new ModelAndView();
+			String titleName="";
+			
+			//For Update Process
+			if(deptId.isPresent()) {
+				
+				titleName="Update Department Information";
+				DepartmentEntity dept=deptService.getDeptById(deptId.get());
+				model.addObject("titleName",titleName);
+				model.addObject("dept",dept);
+				
+			}
+			//For Registration Process
+			else {
+				
+				titleName="Department Registration";
+				DepartmentManageReqBean dept=new DepartmentManageReqBean();
+				model.addObject("titleName",titleName);
+				model.addObject("dept",dept);
+				
+			}
+			
+			model.setViewName("admin/dept_register");
+
+			return model;
+		}
 	// Department Registration Form
 		@RequestMapping(path="/createDept",method = RequestMethod.POST)
 		public ModelAndView addNewDept(@ModelAttribute("dept") DepartmentManageReqBean deptbean) {
 
 			Long createdBy=(long) 1;
-			Short delFlag=1;
+			Short delFlag=0;
 			
 			Timestamp createdTime = new Timestamp(System.currentTimeMillis());
 			
@@ -112,17 +135,11 @@ public class DepartmentManageController {
 			return new ModelAndView("redirect:/ses/dept_lists");
 		}
 
-	// Department Update Form
-	@RequestMapping("/deptEdit/{id}")
-	public ModelAndView showDeptUpdate(@PathVariable("id") long deptId) {
-
-		ModelAndView model = new ModelAndView();
+	@RequestMapping("/delDept/{id}")
+	public ModelAndView delDept(@PathVariable("id") Long deptId) {
 		
-		DepartmentEntity dept=deptService.getDeptById(deptId);
-		model.addObject("dept",dept);
-		model.setViewName("admin/dept_register");
-
-		return model;
+		Boolean res=deptService.deleteDept(deptId);
+		return new ModelAndView("redirect:/ses/dept_lists");
 	}
 
 }
