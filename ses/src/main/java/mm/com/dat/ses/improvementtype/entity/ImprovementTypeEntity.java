@@ -17,7 +17,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.Where;
 
@@ -35,7 +34,6 @@ public class ImprovementTypeEntity {
 	private Long improvement_type_id;
 
 	@Column(name = "improvement_type", nullable = false)
-	@NotBlank(message = "Improvement is required.")
 	private String improvementType;
 
 	@Column(name = "del_flag", nullable = false)
