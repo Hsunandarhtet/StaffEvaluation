@@ -24,8 +24,4 @@ public class DepartmentManageReqDto {
 	private Long createdBy;
 	
 	private Timestamp createdTime;
-
-	private Long updatedBy;
-	
-	private Timestamp updatedTime;
 }

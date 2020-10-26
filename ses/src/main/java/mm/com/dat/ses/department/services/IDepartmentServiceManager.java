@@ -25,6 +25,6 @@ public interface IDepartmentServiceManager {
 	
 	Boolean deleteDept(Long dept_id);
 	
-	long count();
+	Long count();
 	
 }

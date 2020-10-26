@@ -76,11 +76,9 @@ public class DepartmentManageService implements IDepartmentServiceManager{
 			createDept.setDelFlag(dept.getDelFlag());
 			createDept.setCreatedBy(dept.getCreatedBy());
 			createDept.setCreatedTime(dept.getCreatedTime());
-			createDept.setUpdatedBy(dept.getUpdatedBy());
-			createDept.setUpdatedTime(dept.getUpdatedTime());
 			try {
 				deptRepo.save(createDept);
-			}catch(Exception e) {
+			}catch(PersistenceException e) {
 				status=false;
 			}
 			
@@ -102,7 +100,7 @@ public class DepartmentManageService implements IDepartmentServiceManager{
 				
 				try {
 					deptRepo.save(updateDept);
-				}catch(Exception e) {
+				}catch(PersistenceException e) {
 					status=false;
 				}
 			}
@@ -126,7 +124,7 @@ public class DepartmentManageService implements IDepartmentServiceManager{
 	}
 
 	@Override
-	public long count() {
+	public Long count() {
 		
 		return deptRepo.count();
 	}

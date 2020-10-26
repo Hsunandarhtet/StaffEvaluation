@@ -45,7 +45,7 @@ public class DepartmentManageController {
 	@RequestMapping("/dept_lists")
 	public ModelAndView showDeptLists(@RequestParam(value = "page", defaultValue = "1") int pageNumber) {
 		
-		logger.info("Starting the getStudentList() For all searching...");
+		logger.info("Starting the getDepartmentList() For all searching...");
 		
 		ModelAndView model = new ModelAndView();
 
@@ -104,9 +104,8 @@ public class DepartmentManageController {
 			else {
 				
 				titleName="Department Registration";
-				DepartmentManageReqBean dept=new DepartmentManageReqBean();
 				model.addObject("titleName",titleName);
-				model.addObject("dept",dept);
+				model.addObject("dept",new DepartmentManageReqBean());
 				
 			}
 			
@@ -114,7 +113,7 @@ public class DepartmentManageController {
 
 			return model;
 		}
-	// Department Registration Form
+	// Department Registration 
 		@RequestMapping(path="/createDept",method = RequestMethod.POST)
 		public ModelAndView addNewDept(@ModelAttribute("dept") DepartmentManageReqBean deptbean) {
 

@@ -2504,6 +2504,22 @@ footer.site-footer {
 
 /*# sourceMappingURL=style.css.map */
 
+/*************** th Style **************/
+.th-title{
+	border-bottom:none !important;
+
+}
+
+.th-input{
+	border-top:none !important;
+	padding:0 0 0.15rem 1% !important;
+
+}
+.th-title-no{
+	border-top:none  !important;
+}
+/*****************************/
+
 
 /*************** Add Button Design **************/
 .wrapper{
