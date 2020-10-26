@@ -1,3 +1,10 @@
+<!-- ***************************************************************
+ * Author       : Min Arkar Mon			
+ * Created Date : 02/10/2020
+ * Updated Date : -
+ * Version      : 1.0
+ * Dev History  : Firstly Created
+***************************************************************-->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -8,12 +15,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="images/custom-logo.jpg">
 
-<link rel="stylesheet" href="../css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/font-awesome.min.css">
-<link rel="stylesheet" href="../css/flag-icon.min.css">
-<link rel="stylesheet" href="../css/cs-skin-elastic.css">
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/cs-skin-elastic.css">
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/font-awesome.min.css">
+<link rel="stylesheet" href="../../css/flag-icon.min.css">
+<link rel="stylesheet" href="../../css/cs-skin-elastic.css">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/cs-skin-elastic.css">
 <link rel="stylesheet"
 	href="../css/lib/datatable/dataTables.bootstrap.min.css">
 
@@ -47,26 +54,28 @@
 						<div class="card">
 						
 							<div class="card-header">
-								<strong>Improvement Type Registration</strong>		
+								<strong th:text="${titleName}"></strong>		
 							</div>
 							
+							<form th:action="@{/ses/improvementType_create}" th:object="${imptType}" method="post">
 							<div class="row">
 								<div class="col-lg-8">
 									<div class="card-body">
 										<div class="form-group">
 		                                    <label>Improvement Type Name</label>
-											<input type="text" value="" class="form-control"/>
+											<input type="text" th:field="*{improvementType}" id="improvementType" value="" class="form-control"/>
 										</div>
 										
-										<div>
-											<a class="btn btn-primary" href="/impromentType_lists" role="submit">Save</a>
-											<a class="btn btn-primary" href="/impromentType_lists" role="button">Cancel</a>
-										</div>
+										<input type="submit" class="btn btn-primary" value="Save"/>
+										<a href="javascript:history.back()"><button type="button" class="btn btn-primary">Cancel</button></a>
+										
+										<input type="hidden" id="improvement_type_id" th:field="*{improvement_type_id}"/>
 	
 									
 									</div>	
 								</div>
 							</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -94,11 +103,6 @@
 	<script src="../js/jquery.matchHeight.min.js"></script>
 	<script src="../js/main.js"></script>
 
-	<!--  Chart js -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#bootstrap-data-table-export').DataTable();
-		});
-	</script>
+	
 </body>
 </html>
