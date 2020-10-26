@@ -86,7 +86,7 @@
 	                                            <td th:text="${team.teamFullName}"></td>
 	                                            <td th:text="${team.deptEntity.deptName}"></td>
 	                                            <td><a th:href="@{/ses/teamEdit/{id}(id=${team.team_id})}"><i class="menu-icon fa fa-pencil" style="padding:0 20% 0 20%;"></i></a>
-	                                            <a href="#"><i class="menu-icon fa fa-trash-o" th:onclick="deletefunction([[${team.team_id}]],[[${team.teamShortName}]])"></i></a></td>
+	                                            <a href="#"><i class="menu-icon fa fa-trash-o" th:onclick="deletefunction([[${team.team_id}]],[[${team.teamShortName}]],[[${team.teamFullName}]],[[${team.deptEntity.deptName}]])"></i></a></td>
 	                                        </tr>
 	                                       
 	                                        
@@ -151,11 +151,11 @@
             ]
         } );
     } );
-    function deletefunction(id,name){
+    function deletefunction(id,name,fullName,deptName){
     	swal({
     
     	  title: "Delete Record",
-    	  text: "Are you sure you want to delete this record?\n"+name,
+    	  text: "Are you sure you want to delete this record?\n\n"+"Team Short Name : "+name+"\nTeam Full Name : "+fullName+"\nDepartment Name : "+deptName,
     	  icon: "warning",
     	  buttons: true,
     	  dangerMode: true,

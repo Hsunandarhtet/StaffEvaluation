@@ -50,20 +50,21 @@
 										<div class="form-group">
 		                                    <label for="dept">Department</label>
 											<select class="form-control" id="dept" th:field="*{deptEntity.dept_id}">
-												<option value=""></option>
 											    <option th:each="dept : ${dept}" th:value="${dept.dept_id}" th:text="${dept.deptName}"></option>
 											 </select>
 									 	</div>
 									 	
 									 	<div class="form-group">
 		                                    <label>Team Short Name</label>
-											<input type="text" th:field="*{teamShortName}" value="" class="form-control"/>
+											<input type="text" th:field="*{teamShortName}" value="" class="form-control" required  oninvalid="this.setCustomValidity('Enter Team Short Name.')"
+    oninput="this.setCustomValidity('')"  />
 											<!-- <h4 th:if="${#fields.hasErrors('teamShortName')}" th:errors="*{teamShortName}">Name Error</h4> -->
 										</div>
 										
 										<div class="form-group">
 		                                    <label>Team Full Name</label>
-											<input type="text" th:field="*{teamFullName}" value="" class="form-control"/>
+											<input type="text" th:field="*{teamFullName}" value="" class="form-control"  required  oninvalid="this.setCustomValidity('Enter Team Full Name.')"
+    oninput="this.setCustomValidity('')"  />
 											<!-- <h4 th:if="${#fields.hasErrors('teamFullName')}" th:errors="*{teamFullName}">Name Error</h4> -->
 										</div>
 										

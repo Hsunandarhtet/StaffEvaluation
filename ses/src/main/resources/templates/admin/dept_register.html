@@ -50,7 +50,8 @@
                                     	
 										<div class="form-group">
 		                                    <label>Department Name</label>
-											<input type="text" th:field="*{deptName}" id="deptName" value="" class="form-control"/>
+											<input type="text" th:field="*{deptName}" id="deptName" value="" class="form-control" required  oninvalid="this.setCustomValidity('Enter Department Name.')"
+    oninput="this.setCustomValidity('')"  />
 										</div>
 										
 									<input type="submit" class="btn btn-primary" value="Save"/>
